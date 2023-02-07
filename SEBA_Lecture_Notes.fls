@@ -1,4 +1,4 @@
-PWD /home/binotto/Desktop/SEBA_Notes
+PWD /home/binotto/Desktop/SEBA_NOTES
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/xetex/xelatex.fmt
 INPUT SEBA_Lecture_Notes.tex

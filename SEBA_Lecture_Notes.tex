@@ -282,16 +282,126 @@
 \label{sec:requirements_engineering}
 
 \begin{itemize}
-  \item \textbf{Requirements engineering} is concerned with \textbf{elicitation}, \textbf{analysis}, \textbf{specification} and \textbf{validtion} of software requirements as well as the management of requirements.
 
 \item \textbf{Software requirements} express the needs and constraints placed on a software product.
+
+  \item \textbf{Requirements engineering} is concerned with \textbf{elicitation}, \textbf{analysis}, \textbf{specification} and \textbf{validation} of software requirements as well as the management of requirements.
+
+\item \textbf{Requirements Management} deals with the administration and maintenance of requirements documents, in particular:
+	\begin{itemize}
+	  \item change requirements (change management)
+          \item trace and link requirements (requirements tracing)
+	  \item verify requirements
+	\end{itemize}
+
+
 \end{itemize}
 
 \subsection{Traditional Requirements Engineering} % (fold)
 \label{sub:traditional_requirements_engineering}
 
+\begin{itemize}
+	\item \textbf{Objectives of Requirements Management:}
+		\begin{itemize}
+		  \item \textbf{Efficient} preparation of \textbf{high quality} requirements and system specifications,
+			   \begin{itemize}
+			     \item coordinated with all stakeholders (different objectives and interests)
+			\item coordinated with all specifications and constraints
+			\item evaluated according to profitability and feasibility 
+			   \end{itemize}
+
+		\item \textbf{Specification documents} are basis for:
+			\begin{itemize}
+			  \item contract negotiation and contractual agreements
+		\item coordination between the stakeholders (customers, developers)
+		\item design, realization, integration
+			 \item software acceptance (test specification)
+			\item future developments, projects
+			\end{itemize}
+		\end{itemize}
+\item \textbf{Requirement Classification:} Distinction between \underline{functional and non-} \underline{functional requirements and constraints}:
+	\begin{itemize}
+		\item \textbf{Functional requirements} \ describe \underline{interactions} between the system and its environment independent of their realization.
+		\item \textbf{Non-functional requirements} describe \underline{general properties} of the system.
+\item \textbf{Restrictions (Constraints)} determine the \underline{solution space} for the realization.	
+	\end{itemize}
+
+\item \textbf{Stakeholder Management:} It includes
+	\begin{itemize}
+	  \item processes required to identify people that could impact or be impacted by the project
+\item to analyze stakeholder expectations and their impact on the project
+	\item to develop appropriate management strategies for effectively engaging stakeholders in project decisions and execution
+	\end{itemize}
+
+\item \textbf{Requirement Specification:}
+	\begin{itemize}
+	  \item technical result document of requirement identification phase
+	\item \textbf{contains} \underline{stakeholder identification, functional and non-functional}\\ \underline{requirements, constraints, evaluation plan and metrics}
+	\item list of all deliverables and services to be fulfilled by contractor within contract as defined by customer
+	\item \textbf{what} is to expect from the solution (product)
+	\item formulation of requirements should be as general as possible and as restrictive as necessary
+	\item enables the contractor to develop optimal solutions
+	\end{itemize}
+
+\item \textbf{Requirements Validation:} \textbf{Validation}, \textbf{Consistency check} (no conflicts), \textbf{Completeness check}, \textbf{Reality check}, \textbf{Verifiability}
+
+\item \textbf{Functional Specification:}
+	\begin{itemize}
+	\item defines the purpose of the system
+	  \item solution proposal created by contractor based on the requirement specification provided by client
+		  \item \textbf{contains} \underline{target determination, product usage, environment (e.g.}\\ \underline{hardware), functions, UI, global test cases} 
+	\item system description or solution specification, which describes \textbf{how} the solutions is to be realized (concrete solution approaches)
+	\item the \textbf{what} from \textbf{requirement specification} is detailed
+	\end{itemize}
+\end{itemize}
+
+\subsection{Agile Requirements Engineering} % (fold)
+\label{sub:agile_requirements_engineering}
+
+\begin{itemize}
+  \item \textbf{Requirements Engineering and Agile Software Development:}
+\begin{itemize}
+  \item \textbf{Agile software development} focuses more on \textbf{continuous collabration} (workshops, interviews etc.) with stakeholders instead of relying on \textbf{specification documents} (\textit{example: SCRUM})
+	  \item \textbf{Traditional requirements engineering}
+		  \begin{itemize}
+		    \item focuses on customer collabration mainly at an \underline{early phase of the} \underline{project} (longer change cycles)
+			   \item emphasizes a heavy-weight process with extensive, \textbf{static specification documents}
+				   
+		  \end{itemize}
 
 
+\item \textbf{Agile requirements engineering}
+	\begin{itemize}
+		\item fosters communication with the customer during the \underline{whole development}\\ \underline{process} to \textbf{continuously update requirements}
+		\item focuses less on extensive documentation, but specification documents \textbf{might be necessary} because of legal or contracting reasons etc.
+		\item includes activities and artifacts that are similar to classical requirements engineering activities
+	\end{itemize}
+\end{itemize}
+
+\item \textbf{Typical Requirement Artifacts in Agile Software Development:}
+	\begin{itemize}
+	  \item \textbf{user story}, \textbf{story card}, \textbf{use case}, \textbf{scenario}, \textbf{UML diagram}, \textbf{prototype}
+	\end{itemize}
+
+\item \textbf{User Stories:}
+	\begin{itemize}
+	  \item explanation of a software feature written from the perspective of the end user
+		  \item most frequently used artifact in \textbf{agile software development}
+		  \item mnemonic for writing good user stories: INVEST\footnote{independent, negotiable, valuable, estimable, small, testable}
+	\end{itemize}
+
+\item \textbf{Typical Requirements Engineering Challenges:}
+	\begin{itemize}
+	  \item different interest groups can raise \textbf{conflicting requirements}
+	\item the people who \textbf{pay} for the system are rarely the ones who \textbf{use} it
+	\item the organization and the technical environment may \textbf{change} after the system rollout
+	\item requirements that change during implementation (Change Requests) can lead to additional costs -> project duration/milestones can be affected significantly
+	\end{itemize}
+\end{itemize}
+
+
+
+% subsection interactive_requirements_collection (end)
 % subsection traditional_requirements_engineering (end)
 
 
