@@ -403,6 +403,62 @@
 \section{Conceptual Modeling with UML} % (fold)
 \label{sec:conceptual_modeling_with_uML}
 
+\begin{itemize}
+\item \textbf{Conceptual Class Diagram vs.\ Implementation-Oriented Diagram:}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1.0\linewidth]{umlcomparison.png}
+  \label{fig:umlcomparison_png}
+\end{figure}
+\item \textbf{Associations between Classes:}
+
+\pagebreak
+
+\begin{itemize}
+  \item \textbf{Multiplicity:}
+	  \begin{figure}[h!]
+	    \centering
+	    \includegraphics[width=0.5\linewidth]{umlmultiplicity.png}
+	    \label{fig:umlmultiplicity_png}
+	  \end{figure}
+	  \\
+	  \end{itemize}
+	  \textit{
+A Lawyer can \underline{create} \textbf{multiple} Contracts, whereas every Contract has a \textbf{single} Lawyer.
+} -> \underline{creates} (action) on the side of Lawyer (actor)
+
+\item \textbf{Aggregation:} implies a relationship where the child can exist independently of the parent (part of the parent)
+\item \textbf{Composition:} implies a relationship where the child \underline{cannot exist} independent of the parent
+
+\item  \textit{\underline{Example:}}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.4\linewidth]{compagg.png}
+	  \label{fig:compagg_png}
+	\end{figure}
+
+\end{itemize}
+
+
+\section{Software Estimation} % (fold)
+\label{sec:software_estimation}
+
+
+
+% section software_estimation (end)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 % section conceptual_modeling_with_uML (end)
@@ -411,27 +467,6 @@
 
 % subsection interactive_requirements_collection (end)
 % subsection traditional_requirements_engineering (end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 % section requirements_engineering (end)
 % subsection characteristics_of_business_applications (end)
 
