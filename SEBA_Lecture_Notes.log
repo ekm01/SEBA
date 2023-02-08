@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  8 FEB 2023 13:29
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  8 FEB 2023 14:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -197,14 +197,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 418--425
 
 File: compagg.png Graphic file (type bmp)
 <compagg.png>
-[11] (./SEBA_Lecture_Notes.aux) ) 
+[11] [12] [13]
+Overfull \hbox (5.8317pt too wide) in paragraph at lines 563--564
+[]\TU/lmr/bx/n/10 Function Point Method: \TU/lmr/m/n/10 It is a combined relation and weighting method. 
+ []
+
+[14] (./SEBA_Lecture_Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2277 strings out of 476156
- 34768 string characters out of 5814963
+ 2279 strings out of 476156
+ 34845 string characters out of 5814963
  336351 words of memory out of 5000000
- 23037 multiletter control sequences out of 15000+600000
+ 23039 multiletter control sequences out of 15000+600000
  475707 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,8n,62p,360b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,8n,62p,360b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SEBA_Lecture_Notes.xdv (11 pages, 150308 bytes).
+Output written on SEBA_Lecture_Notes.xdv (14 pages, 187668 bytes).

@@ -443,7 +443,138 @@ A Lawyer can \underline{create} \textbf{multiple} Contracts, whereas every Contr
 \section{Software Estimation} % (fold)
 \label{sec:software_estimation}
 
+\subsection{Fundamentals of Estimation Methods} % (fold)
+\label{sub:fundamentals_of_estimation_methods}
+\begin{itemize}
+  \item \textbf{Software Estimation:}
+\begin{itemize}
+  \item In principle, software estimation relies on \textbf{forecasting effort}, from which cost and duration are derived.
+\item Regardless of the project and software methodology applied, every initiative requires the definition of a \textbf{budget} and a specific \textbf{time frame} necessary to deliver a final outcome.
 
+\item These two are obtained during the \textbf{early stages} of the project lifecycle through the process of estimation.
+\item \textbf{Estimation} aims to provide an \textbf{approximation} of the amount of recources required to complete project activities and produce a product or service in accordance to specified \textbf{functional} and \textbf{non-functional characteristics}.
+
+\item \textbf{Software estimation conducted in early phases of the project lifecycle:}
+	\begin{itemize}
+	  \item necessary for contract negotiations
+	\item predict expected efforts (and derived costs) for a software project before implementation
+         \item best possible estimation given the available info
+	\end{itemize}
+
+\item \textbf{Agile estimation:}
+	\begin{itemize}
+	  \item estimation of individual requirements during project
+	\item incremental allocation of developers in the most efficient manner
+	\item cost estimates are made several times during development project with varying degrees of detail
+	\end{itemize}
+\end{itemize}
+\item \textbf{Software Estimation: Cone of Uncertainty}
+	\begin{itemize}
+	  \item At the beginning of the project, not much is known about the product/project -> estimates underly high uncertainty
+		  \item As the project progresses, more information is available -> decrease in uncertainty
+	\end{itemize}
+\item \textbf{Software Estimation: Costs}
+	\begin{itemize}
+	  \item \textbf{Cost categories:}
+		  \begin{itemize}
+		    \item \textbf{Development costs:} costs to produce a software product
+			\item \textbf{Personnel costs:} major share of development costs for personnel
+				\begin{itemize}
+				  \item usually low costs for office materials etc.\ in relation to the personnel costs
+				  \item proportionate allocation of CASE\footnote{Computer power-assisted software package Engineering} environment costs (including hardware and software) for product development
+				\end{itemize}
+		  \end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Traditional Software Estimation} % (fold)
+\label{sub:traditional_software_estimation}
+
+\begin{itemize}
+  \item \textbf{Sneed's Devil's Square:}
+	  \begin{itemize}
+	    \item Quantity
+	\item Quality 
+	\item Development duration
+	\item Cost		
+	  \end{itemize}
+are mutually dependent.
+
+\item \textbf{Quantity:}
+	\begin{itemize}
+		\item size of program code (example basis of assesment: LOC\footnote{Lines of Code})
+		  \item functional and data scope
+			  \item possible additional weighting with complexity
+	\end{itemize}
+
+\item \textbf{Quality:}
+	\begin{itemize}
+	  \item higher quality requirements => greater effort
+	\item no \textbf{THE quality}, but different quality characteristics
+	\end{itemize}
+
+\item \textbf{Productivity:}
+	\begin{itemize}
+	  \item influenced by many different factors
+	\item number of communication links grows \textbf{quadratically} with the team size
+	\end{itemize}
+
+\item \textbf{Development time:}
+	\begin{itemize}
+	  \item need more members to shorten development time
+	\item more members => more communication effort
+	\item higher communication => decrease in productivity
+	\end{itemize}
+
+\item \textbf{Methods for Effort Estimation:}
+\begin{itemize}
+  \item \textbf{Estimation Strategies:}
+	  \begin{itemize}
+	    \item \textbf{Top-Down:} estimation of the total project effort using mathematical algorithms based on the functional requirements
+	\item \textbf{Bottom-Up:} expenses for each expense item are calculated separately and added to calculate the total project effort
+	  \end{itemize}
+
+\item \textbf{Comparison methods:}
+	\begin{itemize}
+	  \item estimation based on effort analysis of already accomplished similar developments
+	\end{itemize}
+
+
+\item \textbf{Algorithmic methods:}
+	\begin{itemize}
+	  \item effort calculated with algorithmic methods
+	  \item based on statistical models or actual expenditure of already completed projects
+	\end{itemize}
+
+\item \textbf{Key figure methods:}
+	\begin{itemize}
+	  \item total cost of the software product determined by estimating the cost of individual units or project phases
+	\end{itemize}
+
+\item None of the listed basic methods alone is sufficient.
+\item Depending on the point in time and knowledge of effort-relative data, one or the other method should be used.
+\end{itemize}
+
+\item \textbf{Concrete Procedures for Effort Estimation:}
+	\begin{itemize}
+	  \item \textbf{Goal:} Combine advantages of several effort estimation methods to deliver accurate results. (\textit{example: Function Point Method})
+	\end{itemize}
+
+\item \textbf{Function Point Method:} It is a combined relation and weighting method.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+% subsection traditional_software_estimation (end)
+
+% subsection fundamentals_of_estimation_methods (end)
 
 % section software_estimation (end)
 
