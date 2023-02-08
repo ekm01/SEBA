@@ -561,9 +561,89 @@ are mutually dependent.
 	\end{itemize}
 
 \item \textbf{Function Point Method:} It is a combined relation and weighting method.
+	\begin{enumerate}
+	  \item \textbf{Categorization} of each product requirement (input, query, output, database, reference data)i
+		  \begin{itemize}
+		    \item \textbf{Input:} by the user
+		\item \textbf{Output:} displaying query results, calculated data
+		\item \textbf{Query:} performed on the \textbf{database} of the system, read and write
+		\item \textbf{Reference data:} used to validate input, generate the output or construct the query (read-only)
+		  \end{itemize}
+\item \textbf{Classification} of each product requirement
+	\begin{itemize}
+	  \item \textbf{simple}
+	  \item \textbf{medium} 
+	  \item \textbf{complex} 
+	\end{itemize}
+	\item \textbf{Entry} into calculation form
+	\item \textbf{Evaluation} of influencing factors
+		\begin{itemize}
+		  \item the \textbf{influence factors} refer to the application as a whole and not to individual functions or function points
+		\end{itemize}
+		\item \textbf{Calculation} of the evaluated Function Points (FP)
+		\item \textbf{Determination} of the personnel expenses based on a FP-PM curve or table
+			\begin{itemize}
+				\item significant productivity decreases in large projects (FP-PM\footnote{\textbf{FP:} function points, \textbf{PM:} person month (= MM: man month)}: increase in FP => increase in PM) -> non-linear growth
+			\end{itemize}
+		\item \textbf{Update} of empirical data as an estimation basis for follow-up project
+			\begin{itemize}
+				\item After completion of a development estimated with the Function Point Method, the new value pair (FP, Actual PM) is used to update the existing curve. 
+			\end{itemize}
+	\end{enumerate}
+\item \textbf{Function Point Method: Requirements:}
+	\begin{itemize}
+	  \item evaluation once the project requirements are known
+	\item evaluation by employees with sufficient knowledge of requirements
+\item product considered from the perspective of client
+ \item company-specific training, guidelines are needed to minimize the effect of subjective individual estimates during the classification and evaluation of influencing factors
+	 \item actual efforts must be measured for post-calculation
+	\end{itemize}
+
+\item \textbf{Function Point Method: Advantages}
+	\begin{itemize}
+	  \item product requirements, not LOC as starting point
+	\item adaptability to different application areas (change of categories)
+	\item adaptability to new techniques (change of influencing factors, influence evaluation)
+		\item adaptability to company-specific environments (if, ie and class factors per class)
+		\item refinement of the estimate according to the development process
+		\item first estimate is possible at a very early stage (planning phase)
+		\item good estimation accuracy
+		\end{itemize}
+\item \textbf{Function Point Method: Disadvantages}
+	\begin{itemize}
+	  \item only total effort can be estimated -> conversion to individual phases must be made using a percentage-based method
+	\item personnel-intensive, not easy to automate
+\item too strongly function-oriented
+	\item influence factors do not clearly separate project and product characteristics
+	\end{itemize}
+\end{itemize}
+
+\subsection{Agile Estimation Methods} % (fold)
+\label{sub:agile_estimation_methods}
+
+\begin{itemize}
+  \item \textbf{Estimation in the SCRUM Framework:}
+	  \begin{enumerate}
+		  \item Estimation of \textbf{Story Points}\footnote{\textbf{Story points} are units of measure for expressing an estimate of the overall effort required to fully implement a product backlog item or any other piece of work.} for each item in the \textbf{Product Backlog}
+		    \begin{itemize}
+			    \item an \textbf{ordered list} of everything that is known to be needed in the product
+			\item \textbf{Product Backlog Refinement:} act of adding detail, \textbf{estimates}, and order to items in the \textbf{Product Backlog}
+			\item \textbf{User Story} is the unit with which software features are \textbf{estimated} and developed.
+		    \end{itemize}
+		\item \textbf{Time Estimation} (in days) for each item in the \textbf{Sprint Backlog}
+	  \end{enumerate}
+
+\item \textbf{Estimation with the help of Planning Poker:}
+\begin{itemize}
+  \item reason to use \textbf{planning poker} is to \textbf{avoid the influence of the other participants} (group thinking)
+\item estimates are \textbf{story points} from different members (developers)
+\item estimates are revealed simultaneously to assure the indepence between group members
+\item estimates are used during \textbf{release} and \textbf{sprint planning} meetings to create release and sprint plans
+\end{itemize}
 \end{itemize}
 
 
+% subsection agile_estimation_methods (end)
 
 
 
