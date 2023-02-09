@@ -893,7 +893,82 @@ are mutually dependent.
 \subsection{Java Annotations} % (fold)
 \label{sub:java_annotations}
 
+\begin{itemize}
+  \item \textbf{Motivation: Aspects and Cross-Cutting Concerns:}
+	  \begin{itemize}
+	    \item Software components, libraries and frameworks define \textbf{reusable code}
+\item functionality separated from user code through API calls
+\item user programs remain \textbf{unchanged}
+\item desirable to extract \textbf{repetitive code elements} that address a certain \textbf{aspect} of overall system functionality from user programs
+\item \textbf{Examples} of such aspects which address \textbf{cross-cutting concerns}\footnote{\textbf{Cross-cutting concern} relies on or affects many other aspects within that program.} of whole app:
+	\begin{itemize}
+	  \item component configuration and binding
+	\item monitoring and logging
+		\item access control
+			\item data conversion for data exchange
+			\item exception and transaction management
+	\end{itemize}
 
+\item \textbf{combining these aspects freely} which makes it impossible to isolate them from the user code
+	  \end{itemize}
+
+  \item \textbf{Annotation:} a tag that represents \textbf{metadata} i.e.\@  attached with class, interface, methods or fields to indicate some additional information which can be used by java compiler and JVM.
+
+\item \textbf{Dependency Injection (DI):} a design pattern in which an object (client) receives other objects (services or dependencies) that it depends on. 
+	\begin{itemize} 
+	\item code that passes the service to the client is called \textbf{injector} -> injector tells client what service to use (rather than allowing client to choose)
+
+	\item intent behind DI is to achieve \textbf{separation} of concerns of \textbf{construction} and \textbf{use} of objects
+	\end{itemize}
+\item \textbf{Dependency Injection in Spring (Boot):} The \textbf{injector code} is part of the framework and triggered by \textbf{annotations}.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1.0\linewidth]{dicustomer.png}
+  \label{fig:dicustomer_png}
+\end{figure}
+
+\textit{\textbf{CustomerService} is the \textbf{client}, whereas \textbf{CustomerRepository} is the \textbf{service}. \textbf{@Autowired} is the \textbf{injector}.}
+
+\item \textbf{Use of Annotations in Jakarta EE:}
+\begin{itemize}
+  \item Application servers or persistence frameworks like \textbf{Hibernate} provide aspects that implement the specified functionality.
+\item \textit{\underline{Examples:}} \textbf{\textit{@Entity}} => for classes to be persisted into database
+\end{itemize}
+\item \textbf{Use of Annotations in Spring (Boot):}
+	\begin{itemize}
+	  \item \textbf{\textit{@Component}}: generic stereotype for any Spring-managed components\\ \\
+		  \underline{Special cases of \textbf{\textit{@Component}}:}
+	\item \textbf{\textit{@Controller}}: for classes at presentation layer
+	\item \textbf{\textit{@Service}}: for classes at service layer
+\item \textbf{\textit{@Repository}}: for classes at persistance layer\\ \\
+	\underline{Other Annotations:}
+
+\item \textbf{\textit{@SpringBootApplication}}: for Spring Boot apps
+\item \textbf{\textit{@Bean}}: for objects which are created by Spring framework when the app starts (DI)
+\item \textbf{\textit{@Autowired}}: for DI (automatic instantiation of specific classes (beans)) 
+
+
+\end{itemize}
+
+\item \textbf{Reflection:} process in which a program accesses info that belongs to the structure of the program itself
+\begin{itemize}
+  \item allows programs to examine, introspect and modify their own structure and behaviour at \textbf{compile-time} or \textbf{run-time}
+
+\item \underline{\textit{Example:}} calling a method of an object by its name
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.7\linewidth]{reflection.png}
+	  \label{fig:reflection_png}
+	\end{figure}
+\end{itemize}
+
+\item \textbf{Request/Response Cycle:} \textit{Representation of a Software Application => From \textbf{Persistance Layer} (Buttom) to \textbf{Presentation Layer} (Top)}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.7\linewidth]{reqrepcycle.png}
+	  \label{fig:reqrepcycle_png}
+	\end{figure}
+\end{itemize}
 
 % subsection java_annotations (end)
 % subsection libraries_an (end)

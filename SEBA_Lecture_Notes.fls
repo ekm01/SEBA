@@ -233,4 +233,13 @@ INPUT targetarchitecture.png
 INPUT ./addisframe.png
 INPUT ./addisframe.png
 INPUT addisframe.png
+INPUT ./dicustomer.png
+INPUT ./dicustomer.png
+INPUT dicustomer.png
+INPUT ./reflection.png
+INPUT ./reflection.png
+INPUT reflection.png
+INPUT ./reqrepcycle.png
+INPUT ./reqrepcycle.png
+INPUT reqrepcycle.png
 INPUT SEBA_Lecture_Notes.aux

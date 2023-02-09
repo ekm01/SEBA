@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  9 FEB 2023 17:47
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  9 FEB 2023 19:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -228,14 +228,41 @@ Overfull \hbox (2.61331pt too wide) in paragraph at lines 854--855
 [20]
 File: addisframe.png Graphic file (type bmp)
 <addisframe.png>
- [21] (./SEBA_Lecture_Notes.aux) ) 
+
+Overfull \hbox (0.97531pt too wide) in paragraph at lines 899--900
+[]\TU/lmr/m/n/10 Software components, libraries and frameworks define \TU/lmr/bx/n/10 reusable code 
+ []
+
+[21]
+Overfull \hbox (1.08669pt too wide) in paragraph at lines 917--918
+[]\TU/lmr/bx/n/10 Dependency Injection (DI): \TU/lmr/m/n/10 a design pattern in which an object (client)
+ []
+
+File: dicustomer.png Graphic file (type bmp)
+<dicustomer.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 939--941
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 943--945
+
+ []
+
+[22]
+File: reflection.png Graphic file (type bmp)
+<reflection.png>
+File: reqrepcycle.png Graphic file (type bmp)
+<reqrepcycle.png>
+ [23] (./SEBA_Lecture_Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2320 strings out of 476156
- 35870 string characters out of 5814963
+ 2347 strings out of 476156
+ 36380 string characters out of 5814963
  336351 words of memory out of 5000000
- 23076 multiletter control sequences out of 15000+600000
+ 23100 multiletter control sequences out of 15000+600000
  475707 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  55i,8n,62p,360b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SEBA_Lecture_Notes.xdv (21 pages, 291604 bytes).
+Output written on SEBA_Lecture_Notes.xdv (23 pages, 319444 bytes).
