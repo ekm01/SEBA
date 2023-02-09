@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  8 FEB 2023 18:27
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  9 FEB 2023 14:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -202,14 +202,32 @@ Overfull \hbox (5.8317pt too wide) in paragraph at lines 563--564
 []\TU/lmr/bx/n/10 Function Point Method: \TU/lmr/m/n/10 It is a combined relation and weighting method. 
  []
 
-[14] [15] [16] (./SEBA_Lecture_Notes.aux) ) 
+[14] [15]
+File: layeredarchitectures.png Graphic file (type bmp)
+<layeredarchitectures.png>
+ [16] [17]
+File: techstiersex.png Graphic file (type bmp)
+<techstiersex.png>
+File: targetarchitecture.png Graphic file (type bmp)
+<targetarchitecture.png>
+
+Overfull \hbox (12.71999pt too wide) in paragraph at lines 762--763
+[]\TU/lmr/m/n/10 provides its clients with static or dynamically generated content (HTML,
+ []
+
+[18]
+Overfull \hbox (12.665pt too wide) in paragraph at lines 775--776
+[]\TU/lmr/m/n/10 enterprise software platforms offer their own application servers: Jakarta
+ []
+
+[19] [20] (./SEBA_Lecture_Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2280 strings out of 476156
- 34875 string characters out of 5814963
+ 2309 strings out of 476156
+ 35663 string characters out of 5814963
  336351 words of memory out of 5000000
- 23040 multiletter control sequences out of 15000+600000
+ 23066 multiletter control sequences out of 15000+600000
  475707 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  55i,8n,62p,360b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SEBA_Lecture_Notes.xdv (16 pages, 222108 bytes).
+Output written on SEBA_Lecture_Notes.xdv (20 pages, 270836 bytes).

@@ -48,7 +48,7 @@
 \end{itemize}
 \item \textbf{Cross-Cutting Applications:}
 	\begin{itemize}
-	  \item independent of compant hierarchy and fuctional domains
+	  \item independent of company hierarchy and fuctional domains
 	\item used either directly via user interface or programmatically via administration and disposition systems
 	\item \textit{Examples:} office suites, groupware, workflow management systems
 	\end{itemize}
@@ -132,7 +132,7 @@
 			  \end{itemize}
 		  \item \textbf{Consequences:} 
 				  \begin{itemize}
-				    \item need for experts who are familier with configuration options of each release and componant
+				    \item need for experts who are familiar with configuration options of each release and componant
 					   \item scarcity of such experts
 						   \item expensive training
 							   \item expensive consultancy services
@@ -154,7 +154,7 @@
 
 \item \textbf{Multi Tenancy:} Software multitenancy is a software architecture in which a single instance of software runs on a server and serves multiple tenants (e.g.\ companies).
 	\begin{itemize}
-	  \item sevearal companies can be represented in one system
+	  \item several companies can be represented in one system
 	\item distinction between tenant-dependent and -independent data
 	\item supporting tenant-dependent authorization (e.g.\ A may only perform transactions in client 002)
          \item individual adaptations of tenants (e.g.\ currency, couplings)
@@ -166,7 +166,7 @@
 	\item \textbf{Multilingualism of a business information system} makes it possible to
 		\begin{itemize}
 		  \item store and display texts in different languages in the system
-		\item assing graphics and symbols specific to different languages 
+		\item assigning graphics and symbols specific to different languages 
 		\end{itemize}
 	
 \item Multilingualism requires
@@ -214,7 +214,7 @@
 	  \item \textbf{Data consistency} is a must:
 		  \begin{itemize}
 		    \item many users perform \textbf{transactions} simultaneously on central databases
-		\item data must not be lost even in case of system failures.
+		\item data must not be lost even in case of system failures
 		  \end{itemize}
 		  \item \textbf{Programming challenges:}
 			  \begin{itemize}
@@ -646,7 +646,179 @@ are mutually dependent.
 % subsection agile_estimation_methods (end)
 
 
+\section{Technical Foundation of Business Information System} % (fold)
+\label{sec:technical_foundation_of_business_information_system}
 
+\subsection{Architecture of Business Information Systems} % (fold)
+\label{sub:architecture_of_business_information_systems}
+
+\begin{itemize}
+	\item \textbf{Architecture Patterns:}
+		\begin{itemize}
+			\item An \textbf{architecture pattern} describes a particular recurring design problem that arises in specific \textbf{design contexts} and presents a well-proven \textbf{generic scheme} for its solution.
+			\item The solution scheme is specified by describing its constituent \textbf{components}, their \textbf{responsibilities} and \textbf{relationships}, and the ways in which they \textbf{collaborate}.
+			\item \underline{\textit{Examples:}} Layered Architecture, Tiered Architecture
+		\end{itemize}
+
+\item \textbf{Layered Architectures:}
+	\begin{itemize}
+	  \item layers define a \textbf{logical partitioning} of software components to reduce overall system complexity
+	\item \textbf{Two types of layered architectures:}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.6\linewidth]{layeredarchitectures.png}
+  \label{fig:layeredarchitectures_png}
+\end{figure}
+\item a component of a layer may not access a layer above it
+\item \textbf{high cohesion} between conponents within a layer, \textbf{low coupling} between different layers
+\item a layer can have an explicit \textbf{interface} that distinguishes public and private components of a layer
+	\end{itemize}
+
+\item \textbf{Tiers in Architectures:}
+	\begin{itemize}
+	  \item Tiers define a \textbf{physical partitioning} of logical software components into different process spaces of a distributed system.
+
+	\item a tier identifies an independent \textbf{process space} within a distributed application
+	\item these process spaces can be executed on a single/different computers in a \textbf{network}
+	\item each tier has a particular \textbf{responsibility} in the system and addresses a coherent set of \textbf{concerns} and \textbf{requirements} that may change over time
+	\item tiers are a concept relevant for structuring software components during \textbf{execution}
+	\item \textbf{n-tier architecture} defines how many tiers there are within a distributed application
+	\item Typical concerns and requirements in an \textbf{information system}:
+		\begin{itemize}
+		  \item \textbf{Presentation Tier:} how to interact with the users?
+		\item \textbf{Business Logic Tier:} how to capture and structure business logic and ensure the integrity of data?
+		\item \textbf{Resource Tier:} how to persistently store and efficiently manage data?
+		\end{itemize}
+	\end{itemize}
+
+\item \textbf{Client-Server Architecture:}
+        \begin{itemize}
+          \item two components: client and server
+	\item client requests service via network protocol from server, server sends response
+	\item one server can serve multiple clients
+	\item a server can be a client of another server
+        \end{itemize}
+
+\item \textbf{Two-Tier Architecture:}
+	\begin{itemize}
+	  \item client tier and server tier
+	\item assignment of tasks:
+	\begin{itemize}
+	  \item Presentation -> Client tier
+	\item Business logic -> Client tier or server tier, both
+	\item Resource management -> Server tier
+	\end{itemize}
+\item Advantages:
+	\begin{itemize}
+	  \item easy to implement
+	\item high performance
+	\end{itemize}
+	\end{itemize}
+
+\item \textbf{Three-Tier Architecture:}
+	\begin{itemize}
+	  \item Assignment of tasks:
+		  \begin{itemize}
+		   \item Presentation -> Client tier
+	\item Business logic -> Middle tier
+	\item Resource management -> Server tier
+		  \end{itemize}
+	\item Standard model for simple \textbf{web applications}:
+		\begin{itemize}
+		  \item Client tier -> HTML/CSS/JavaScript (loaded dynamically by a \textbf{browser})
+		\item Middle tier -> \textbf{web application server}
+		\item Server tier -> off-the-shelf \textbf{database management system}
+		\end{itemize}
+	\end{itemize}
+
+\item \textbf{Four- and N-Tier Architectures:}
+\begin{itemize}
+  \item extension of three-tier architectures: \textbf{business logic} is distributed to several layers
+\item Motivation:
+	\begin{itemize}
+	  \item further complexity reduction of individual tiers
+	\item improved protection and isolation
+	\item use of multiple and concurrent application processes
+	\end{itemize}
+\end{itemize}
+
+\item \textbf{Technologies and Tiers Used in the Exercises:}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.7\linewidth]{techstiersex.png}
+	  \label{fig:techstiersex_png}
+	\end{figure}
+
+\item \textbf{Target Architecture (SEBA Bank, SEBA Mobility Services):}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.8\linewidth]{targetarchitecture.png}
+	  \label{fig:targetarchitecture_png}
+	\end{figure}
+
+\item \textbf{Web Server:}
+	\begin{itemize}
+	  \item processes incoming requests over various network protocols (HTTP)
+\item provides its clients with static or dynamically generated content (HTML, CSS, files, images)
+	\item \textbf{Additional tasks:}
+		\begin{itemize}
+		  \item resource management (sockets, static files)
+		\item access control
+		\item cookie\footnote{A \textbf{cookie} is a small piece of information that a website stores on your computer, and uses it at the time of your iteration on that website.} management
+				\item script execution
+				\item caching
+		\end{itemize}
+	\end{itemize}
+\item \textbf{Application Server:}
+\begin{itemize}
+  \item web servers that execute application code to respond to HTTP requests with HTTP responses
+\item enterprise software platforms offer their own application servers: Jakarta EE, SAP Web Application Server
+
+\item \textbf{Additional tasks:}
+	\begin{itemize}
+	  \item authentication
+		  \item authorization
+			  \item session management
+				  \item encapsulation of databases
+					 \item transaction processing
+						 \item asynchronous communication 
+	\end{itemize}
+\end{itemize}
+
+\item \textbf{Database Server:}
+	\begin{itemize}
+	  \item \textbf{Database server (software)}
+		  \begin{itemize}
+		    \item software to implement data management, query optimization, concurrency control, access control
+		\item can belong to different categories: Relational DB etc.
+		\item provides administration tools
+		  \end{itemize}
+
+	\item \textbf{Database server (hardware)}
+		\begin{itemize}
+		  \item database servers usually run on a separate high-performance machines (disk IO, main memory, number of processes and threads)
+		\item taking in the role of the \textbf{server}
+		\end{itemize}
+
+	\item \textbf{Used in the exercises:}
+		\begin{itemize}
+		  \item H2 database (relational)
+		\item no separate database server / tier (embedded, in-memory)
+		\item not suitable for production
+		\end{itemize}
+	\end{itemize}
+\pagebreak
+\item \textbf{Data Exchange Formats: XML and JSON:}
+\begin{itemize}
+  \item A \textbf{Web API} consists of a defined set of HTTP request messages.
+\item for each request -> Web API specifies the structure of response messages.
+\item messages expressed in JSON or XML.
+\end{itemize}
+\end{itemize}
+
+% subsection architecture_of_business_information_systems (end)
+
+% section technical_foundation_of_business_information_system (end)
 
 
 
@@ -676,6 +848,7 @@ are mutually dependent.
 
 
 
+
 % subsection interactive_requirements_collection (end)
 % subsection traditional_requirements_engineering (end)
 % section requirements_engineering (end)
@@ -684,6 +857,7 @@ are mutually dependent.
 % subsection standard_and_custom_software ()
 
 % subsection classification_of_business_applications (end)
+
 
 % subsection business_without_iT_support (end)
 
