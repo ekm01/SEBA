@@ -811,11 +811,92 @@ are mutually dependent.
 \item \textbf{Data Exchange Formats: XML and JSON:}
 \begin{itemize}
   \item A \textbf{Web API} consists of a defined set of HTTP request messages.
-\item for each request -> Web API specifies the structure of response messages.
-\item messages expressed in JSON or XML.
+\item for each request -> Web API specifies the structure of response messages
+\item messages expressed in JSON or XML => \textbf{human-readable} data interchange
 \end{itemize}
 \end{itemize}
 
+
+\subsection{Libraries and Frameworks} % (fold)
+\label{sub:libraries_an}
+\begin{itemize}
+  \item \textbf{Library:} \textbf{reusable software component} that consists of several classes
+	  \begin{itemize}
+		  \item \textbf{functions} of the library are called by the code of the users via its \textbf{Application Programming Interface (API)}
+		\item \textbf{API:} the order in which the provided functions are called is determined by the user
+		\item \textit{\underline{Examples:}} Log4J (logging), JDBC (database access), dom4j (XML parsing)
+	  \end{itemize}
+
+\item \textbf{Framework:} \textbf{partially finished software system} (completed code), which consists of a variety of coordinated software components from which an \textbf{adapted software system} can be created with relatively little effort
+	\begin{itemize}
+		\item \textbf{Frameworks offer}
+			\begin{itemize}
+			  \item a basic architecture for a software system
+				  \item a high degree of reusability
+					\item a given set of functions that user can / have to extend
+						\item whereby the general processing logic
+
+			\end{itemize}
+\item \textbf{Frameworks are tailored for specific purposes}
+	\begin{itemize}
+	  \item GUIs: Java Swing
+	\item Web development: Spring Web
+	\item Unit testing: JUnit
+	\end{itemize}
+
+\item \textit{\underline{Framework Examples:}} JUnit, Spring, Jakarta EE 
+	\end{itemize}
+
+\item \textbf{Inversion of Control (IoC):} \textbf{IoC} distinguishes a \textbf{framework} from a \textbf{library}
+\begin{itemize}
+	\item Since \textbf{developer} is in charge of application flow, he decides when to call the \textbf{library}. 
+\item  However, when developer uses a framework, \textbf{framework} decides when to call the \textbf{library}.
+\item This \underline{shift in control of calling the library} from the \textbf{application code} to the \textbf{framework} is an inversion of control.
+
+\end{itemize}
+
+\pagebreak
+
+\item \textbf{Advantages and Disadvantages of Frameworks:}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=1.0\linewidth]{addisframe.png}
+	  \label{fig:addisframe_png}
+	\end{figure}
+
+
+\item \textbf{Jakarta EE (Framework):} a set of specifications for different purposes -> an implementation is needed to use them
+
+\item \textbf{Spring (Framework):} a framework (configuration model) for building web applications
+\begin{itemize}
+  \item \textbf{Features:}
+	  \begin{itemize}
+	    \item IoC container with \textbf{dependency injection}
+	\item data access
+	\item testing
+	  \end{itemize}
+\end{itemize}
+
+\item \textbf{Spring Boot:} a project within the \textbf{Spring Framework} that provides a simplified way to configure \textbf{based on conventions} and run Spring applications
+	\begin{itemize}
+	  \item \textbf{Motivation:} minimize amount of manual configuration (convention over configuration)
+
+	\item \textbf{Features:}
+		\begin{itemize}
+		  \item creation of stand-alone Spring apps
+		\item embedded web servers
+		\item use of annotations
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsection{Java Annotations} % (fold)
+\label{sub:java_annotations}
+
+
+
+% subsection java_annotations (end)
+% subsection libraries_an (end)
 % subsection architecture_of_business_information_systems (end)
 
 % section technical_foundation_of_business_information_system (end)
