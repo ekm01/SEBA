@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  10 FEB 2023 18:42
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  10 FEB 2023 18:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -350,12 +350,12 @@ File: examplequerydsl.png Graphic file (type bmp)
 <examplequerydsl.png>
  [34] [35] (./SEBA_Lecture_Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2471 strings out of 476156
- 39075 string characters out of 5814963
+ 2472 strings out of 476156
+ 39119 string characters out of 5814963
  336351 words of memory out of 5000000
- 23211 multiletter control sequences out of 15000+600000
+ 23212 multiletter control sequences out of 15000+600000
  475707 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  55i,8n,62p,360b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SEBA_Lecture_Notes.xdv (35 pages, 446152 bytes).
+Output written on SEBA_Lecture_Notes.xdv (35 pages, 446592 bytes).
