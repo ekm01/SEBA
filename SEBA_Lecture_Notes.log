@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  10 FEB 2023 14:29
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  10 FEB 2023 18:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -266,14 +266,96 @@ Overfull \hbox (5.83661pt too wide) in paragraph at lines 1117--1118
 [26]
 File: orm.png Graphic file (type bmp)
 <orm.png>
- [27] [28] (./SEBA_Lecture_Notes.aux) ) 
+ [27]
+Overfull \hbox (4.26494pt too wide) in paragraph at lines 1186--1187
+[]\TU/lmr/m/n/10 for handling circular references: \TU/lmr/bx/it/10 @JsonIdentityInfo(generator
+ []
+
+
+Overfull \hbox (3.94595pt too wide) in paragraph at lines 1186--1187
+\TU/lmr/bx/it/10 = ObjectIdGenerators.PropertyGenerator.class, property
+ []
+
+[28]
+Overfull \hbox (12.617pt too wide) in paragraph at lines 1233--1234
+[]\TU/lmr/bx/n/10 JpaRepository: \TU/lmr/m/n/10 extends PagingAndSortingRepository, flushing/batch
+ []
+
+
+Overfull \hbox (10.05598pt too wide) in paragraph at lines 1238--1239
+[]\TU/lmr/m/n/10 a repository must extend \TU/lmr/bx/it/10 JpaRepository<EntityClass, TypeOfId> 
+ []
+
+File: repospringdata.png Graphic file (type bmp)
+<repospringdata.png>
+[29]
+File: singletable.png Graphic file (type bmp)
+<singletable.png>
+
+Overfull \hbox (2.7117pt too wide) in paragraph at lines 1294--1295
+[]\TU/lmr/bx/n/10 Joined Table Strategy: \TU/lmr/bx/it/10 @Inheritance(strategy = Inheritance-
+ []
+
+
+Overfull \hbox (42.09528pt too wide) in paragraph at lines 1298--1299
+[]$[]$ \TU/lmr/m/n/10 in \TU/lmr/bx/n/10 parent’s table\TU/lmr/m/n/10 , $[]$
+ []
+
+[30]
+File: joinedtable.png Graphic file (type bmp)
+<joinedtable.png>
+File: tableperclass.png Graphic file (type bmp)
+<tableperclass.png>
+ [31]
+File: mappedsuperclass.png Graphic file (type bmp)
+<mappedsuperclass.png>
+
+Overfull \hbox (40.41502pt too wide) in paragraph at lines 1376--1377
+[]\TU/lmr/bx/n/10 Parameters for update/delete propagation: \TU/lmr/m/n/10 e.g. \TU/lmr/bx/it/10 @OneToOne(cascade
+ []
+
+
+Overfull \hbox (24.02495pt too wide) in paragraph at lines 1379--1380
+[]\TU/lmr/m/n/10 referenced objects loaded immediately: \TU/lmr/bx/it/10 fetch = FetchType.EAGER 
+ []
+
+
+Overfull \hbox (31.72495pt too wide) in paragraph at lines 1380--1381
+[]\TU/lmr/m/n/10 referenced objects loaded later on demand: \TU/lmr/bx/it/10 fetch = FetchType.LAZY 
+ []
+
+File: onetoone.png Graphic file (type bmp)
+<onetoone.png>
+[32]
+File: examplejpql.png Graphic file (type bmp)
+<examplejpql.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1397--1404
+
+ []
+
+File: addisjpql.png Graphic file (type bmp)
+<addisjpql.png>
+
+Overfull \hbox (14.70084pt too wide) in paragraph at lines 1417--1418
+[]\TU/lmr/m/n/10 Also, compiler cannot check the JPQL keywords (SELECT, FROM). 
+ []
+
+File: examplecriteriaapi.png Graphic file (type bmp)
+<examplecriteriaapi.png>
+File: criteriaapitypesafe.png Graphic file (type bmp)
+<criteriaapitypesafe.png>
+[33]
+File: examplequerydsl.png Graphic file (type bmp)
+<examplequerydsl.png>
+ [34] [35] (./SEBA_Lecture_Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2369 strings out of 476156
- 36791 string characters out of 5814963
+ 2471 strings out of 476156
+ 39075 string characters out of 5814963
  336351 words of memory out of 5000000
- 23120 multiletter control sequences out of 15000+600000
+ 23211 multiletter control sequences out of 15000+600000
  475707 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,8n,62p,360b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,8n,62p,360b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SEBA_Lecture_Notes.xdv (28 pages, 382608 bytes).
+Output written on SEBA_Lecture_Notes.xdv (35 pages, 446152 bytes).

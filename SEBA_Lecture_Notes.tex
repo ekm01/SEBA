@@ -962,7 +962,7 @@ are mutually dependent.
 	\end{figure}
 \end{itemize}
 
-\item \textbf{Request/Response Cycle:} \textit{Representation of a Software Application => From \textbf{Persistance Layer} (Buttom) to \textbf{Presentation Layer} (Top)}
+\item \textbf{Request/Response Cycle:} \textit{Representation of a Software Application => From \textbf{Persistence Layer} (Buttom) to \textbf{Presentation Layer} (Top)}
 	\begin{figure}[h!]
 	  \centering
 	  \includegraphics[width=0.7\linewidth]{reqrepcycle.png}
@@ -1100,7 +1100,7 @@ are mutually dependent.
 				\end{itemize}
 
 
-\item \textbf{Jakarta Persistance API (JPA):} Jakarta Persistence defines a standard API for persistent management of relational data in Java environments.
+\item \textbf{Jakarta Persistence API (JPA):} Jakarta Persistence defines a standard API for persistent management of relational data in Java environments.
 	\begin{itemize}
 	  \item \textbf{Main Features:}
 		  \begin{itemize}
@@ -1165,6 +1165,29 @@ are mutually dependent.
 	\item entities exit as long as database exists (secure against server failures) or until they are deleted
 	  \end{itemize}
 
+\item \textbf{Specification/Development of an Entity:}
+	\begin{itemize}
+	  \item Entities obey JPA Specification:
+		  \begin{itemize}
+		    \item class must be annotated with \textbf{\textit{@Entity}}
+		\item class must have a \textbf{default constructor} without arguments
+	\item state of an entity available to clients through \textbf{entity's methods}, getters/setters
+	\item class and methods must \textbf{not be final}
+		  \end{itemize}
+
+	\item Entities are annotated for ORM:
+		\begin{itemize}
+		  \item for entity: \textit{\textbf{@Entity}}
+		\item for primary key: \textit{\textbf{@Id}}
+			\item for generation of primary keys: \textit{\textbf{@GenerateValue(strategy = GenerationType.IDENTITY)}}
+				\item for (re)naming a column (attribute) of table: \textit{\textbf{@Column(name = "name")}}
+				\item for (re)naming a table: \textit{\textbf{@Table(name = "name")}}
+				\item for enums: \textit{\textbf{@Enumerated(EnumType.STRING)}}
+				\item for handling circular references: \textit{\textbf{@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")}}
+		\end{itemize}
+	\end{itemize}
+
+
 \item \textbf{Developer View of a Persistent Entity:} developer requires methods of two different types:
 	\begin{enumerate}
 	  \item methods to \textbf{create}, \textbf{read}, \textbf{update} and \textbf{delete} (CRUD) \underline{instances of} \underline{entities}:
@@ -1181,9 +1204,309 @@ are mutually dependent.
 	  \item allows access to the data store by implementing programming interfaces and lifecycle rules defined by JPA
 	\item associated with a persistence context, within which entity instances and their lifecycles are managed
 	\end{itemize}
+
+\item \textbf{Spring Data:} Since managing \textbf{EntityManager} manually is cumbersome, error-prone and leads to boilerplate code, Spring provides \textbf{Spring Data}
+
+\pagebreak
+
+\item \textbf{Spring Data and Spring Data JPA:}
+	\begin{itemize}
+	  \item \textbf{Spring Data:}
+		  \begin{itemize}
+		    \item focuses on repository abstraction
+			    \item provides a familiar and consistent Spring-based programming model for data access
+			\item reduces the amount of boilerplate code required to implement data access layers
+\item supports Criteria API
+		  \end{itemize}
+	\item \textbf{Spring Data Jpa:}
+		\begin{itemize}
+		  \item part of larger Spring Data family, makes it easy to implement JPA-based repos
+		\item not a JPA implementation but an abstraction layer to use
+		\end{itemize}
+	\end{itemize}
+\item \textbf{Spring Data Repositories:}
+	\begin{itemize}
+	  \item \textbf{Annotation:} \textit{\textbf{@Repository}}
+	\item Spring will detect the annotation during component scanning and \textbf{provide an instance} at runtime 
+	\item \textbf{CrudRepository:} provides CRUD functions for a given entity class
+	\item \textbf{PagingAndSortingRepository:} extends CrudRepository, pagination, sorting records
+	\item \textbf{JpaRepository:} extends PagingAndSortingRepository, flushing/batch deleting records
+	\end{itemize}
+
+\item \textbf{Crud Repository:}
+\begin{itemize}
+  \item a repository must extend \textit{\textbf{JpaRepository<EntityClass, TypeOfId>}}
+\item \textbf{CrudRepository} provides the methods:
+	\begin{itemize}
+	  \item \textbf{\textit{save()}}, \textbf{\textit{delete()}}, \textbf{\textit{findAll()}}, \textbf{\textit{findById()}}, \textbf{\textit{count()}}...
+	\item \textit{\underline{Example:}}
+		\begin{figure}[h!]
+		  \centering
+		  \includegraphics[width=1.0\linewidth]{repospringdata.png}
+		  \label{fig:repospringdata_png}
+		\end{figure}
+	\end{itemize}
+\end{itemize}
+\pagebreak
+\item \textbf{Spring Data Repositories-Advantages and Disadvantages:}
+	\begin{itemize}
+	  \item \textbf{Advantages:}
+		  \begin{itemize}
+		    \item less boilerplate code
+		\item easy configuration
+			\item simple queries out-of-the-box
+		  \end{itemize}
+
+		\item \textbf{Disadvantages:}
+			\begin{itemize}
+			  \item code is coupled to library and its specific abstractions
+				  \item complete set of persistence methds are exposed -> loss of control
+			\end{itemize}
+	\end{itemize}
+
+\item \textbf{Relational Mapping of Inheritance Hierarchies:}
+
+	\begin{itemize}
+	  \item \textbf{Single Table Strategy:} \textbf{\textit{@Inheritance(strategy = InheritanceType.SINGLE\_TABLE)}}
+		  \begin{itemize}
+		    \item \underline{all classes of inheritance hierarchy} mapped to \textbf{one (same) table}
+			    \item \underline{all attributes} mapped to \textbf{colums}
+
+				 \item \textbf{Advantages:}
+					 \begin{itemize}
+					   \item \underline{easy} \textbf{primary key} handling
+				\item \underline{good} \textbf{polymorphic query} performance
+					 \end{itemize}
+\item \textbf{Disadvantages:}
+	\begin{itemize}
+	  \item many \textbf{NULL} values
+	\item \textbf{NOT NULL} constraints on subclass entity attributes are not possible
+
+	\end{itemize}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.7\linewidth]{singletable.png}
+	  \label{fig:singletable_png}
+	\end{figure}
+		  \end{itemize}
+
+
+\item \textbf{Joined Table Strategy:} \textit{\textbf{@Inheritance(strategy = InheritanceType.JOINED)}}
+	\begin{itemize}
+	  \item \underline{each class of inheritance hierarchy} mapped to \textbf{different tables}
+
+	  \item \underline{only common attributes} in \textbf{parent's table}, \underline{subclass-specific attributes, id} in \textbf{child's table}
+	\item \textbf{Advantages:}
+		\begin{itemize}
+		  \item \textbf{no NULL} values
+		\item \underline{easy} \textbf{primary key} handling
+
+		\end{itemize}
+		\pagebreak
+	\item \textbf{Disadvantages:}
+		\begin{itemize}
+		  \item search for instances of Pet with \textbf{JOIN}
+		\end{itemize}
+
+		\begin{figure}[h!]
+		  \centering
+		  \includegraphics[width=0.4\linewidth]{joinedtable.png}
+		  \label{fig:joinedtable_png}
+		\end{figure}
+	\end{itemize}
+
+
+\item \textbf{Table per Class Strategy:} \textit{\textbf{@Inheritance(strategy = InheritanceType.TABLE\_PER\_CLASS)}}
+	\begin{itemize}
+	  \item \underline{each class of inheritance hierarchy} mapped to \textbf{different tables}
+	  \item \underline{respective attributes} in \textbf{one table}, instances of child \textbf{not in} parent's table (nor the opposite)
+
+	\item \textbf{Advantages:}
+		\begin{itemize}
+		  \item \textbf{no NULL} values
+			  \item search for instances of Pet \textbf{without JOIN}
+		\end{itemize}
+\item \textbf{Disadvantages:}
+	\begin{itemize}
+	  \item \underline{complex} \textbf{primary key} handling
+	\end{itemize}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.4\linewidth]{tableperclass.png}
+	  \label{fig:tableperclass_png}
+	\end{figure}
+	\end{itemize}
+
+\item \textbf{Mapped Superclass Strategy:} \textit{\textbf{@MappedSuperclass}}
+	\begin{itemize}
+	  \item if parent class is \textbf{abstract}, \textbf{Mapped Suoerclass Strategy} can be used => no instances of parent
+	\item \underline{each subclass} mapped to \textbf{different tables}
+	\item \underline{respective attributes} in \textbf{one table}
+
+
+\item \textbf{Advantages:}
+	\begin{itemize}
+	  \item \textbf{no NULL} values
+	\item \underline{easy} \textbf{primary key} handling
+\item \underline{easy way} to share \textbf{mapping info} between entities
+
+	\end{itemize}
+
+\item \textbf{Disadvantages:}
+	\begin{itemize}
+	  \item \textbf{polymorphic queries} not possible
+	  \item \textbf{superclass (parent)} cannot contain associations with other entities 
+	\end{itemize}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.4\linewidth]{mappedsuperclass.png}
+	  \label{fig:mappedsuperclass_png}
+	\end{figure}
+	\end{itemize}
+	\end{itemize}
+
+\item \textbf{ORM for Associations Between Objects:}
+	\begin{itemize}
+	  \item \textbf{Associations in JPA:}
+		  \begin{itemize}
+		    \item \textbf{\textit{@OneToOne}}
+		    \item \textbf{\textit{@OneToMany}} / \textit{\textbf{@ManyToOne}}
+		\item \textbf{\textit{@ManyToMany}}
+		  \end{itemize}
+	\item \textbf{Parameters for update/delete propagation:} e.g.\ \textit{\textbf{@OneToOne(cascade = CascadeType.REMOVE)}}
+		\item \textbf{Different loading strategies:}
+			\begin{itemize}
+			  \item referenced objects loaded immediately: \textit{\textbf{fetch = FetchType.EAGER}}
+				  \item referenced objects loaded later on demand: \textit{\textbf{fetch = FetchType.LAZY}}
+			\end{itemize}
+\item \underline{\textit{Example in Java:}} \textit{\textbf{Pet} Class has the \textbf{primary key} of  \textbf{Owner} Class (mappedBy) as a \textbf{foreign key} in its table.}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.7\linewidth]{onetoone.png}
+	  \label{fig:onetoone_png}
+	\end{figure}
+	\end{itemize}
+
+\end{itemize}
+
+\pagebreak
+
+\subsection{Query Languages} % (fold)
+\label{sub:query_languages}
+\begin{itemize}
+  \item \textbf{Java Persistence Query Language (JPQL):}
+	  \\ \\JPQL is not \textbf{type-safe}!
+	  \begin{figure}[h!]
+	    \centering
+	    \includegraphics[width=0.7\linewidth]{examplejpql.png}
+	    \label{fig:examplejpql_png}
+	  \end{figure}
+
+	  \begin{figure}[h!]
+	    \centering
+	    \includegraphics[width=0.7\linewidth]{addisjpql.png}
+	    \label{fig:addisjpql_png}
+	  \end{figure}
+
+
+\item \textbf{Criteria API:}
+\begin{itemize}
+  \item \textbf{Motivation:}
+\begin{itemize}
+	  \item Neither attributes nor classes are \textbf{type-safe} in \textbf{JPQL}.
+	\item Also, compiler cannot check the JPQL keywords (SELECT, FROM). 
+	\end{itemize}
+
+\item \textit{\underline{Example:}}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.7\linewidth]{examplecriteriaapi.png}
+	  \label{fig:examplecriteriaapi_png}
+	\end{figure}
+	\begin{itemize}
+	  \item \textbf{Methods for predicate definition:}
+		  \begin{itemize}
+		    \item \textbf{\textit{cb.gt()}}: greater than
+\item \textbf{\textit{cb.equal()}}: equal
+\item \textbf{\textit{cb.between()}}: between
+\item \textbf{\textit{cb.and(Predicate a, Predicate b)}}: WHERE a AND b
+		  \end{itemize}
+	\end{itemize}
+\item \textbf{Type Safety:}
+	\begin{itemize}
+	  \item \textbf{Type safety on attributes not yet ensured:} Reference to attribute with its name as String -> error prune
+		  \begin{figure}[h!]
+		    \centering
+		    \includegraphics[width=0.7\linewidth]{criteriaapitypesafe.png}
+		    \label{fig:criteriaapitypesafe_png}
+		  \end{figure}
+	\end{itemize}
+
+\end{itemize}
+
+\pagebreak
+\item \textbf{Querydsl:} a framework that enables construction of statically typed SQL-like queries
+	\begin{itemize}
+		
+	  \item \textit{\underline{Example:}}
+		  \begin{figure}[h!]
+		    \centering
+		    \includegraphics[width=0.7\linewidth]{examplequerydsl.png}
+		    \label{fig:examplequerydsl_png}
+		  \end{figure}
+
+	\item \textbf{Advantages:}
+		\begin{itemize}
+		  \item more human-readable than Criteria API
+		\item open-source
+			\item statically typed = type-safe queries
+		\end{itemize}
+	\end{itemize}
+
+
 \end{itemize}
 
 
+\subsection{Alternatives for Persistent and Bulk Data Management} % (fold)
+\label{sub:alternatives_for_persistent_and_bulk_data_management}
+
+\begin{itemize}
+  \item \textbf{NoSQL Databases:} a new generation of database systems which considers following points:
+	  \begin{itemize}
+	    \item associated data model \textbf{not relational}
+	\item systems designed for \textbf{distributed and horizontal scalability}
+	\item \textbf{schemaless} or weaker schema restrictions 
+	\item due to distributed architecture, \textbf{easy data replication}
+	\item \textbf{simple API}
+	\item \textbf{eventually consistent}, but \textbf{not ACID}
+	  \end{itemize}
+
+\item \textbf{When to use NoSQL instead of Relational Databases:}
+	\begin{itemize}
+	  \item performance problems in relational databases:
+		  \begin{itemize}
+		    \item indexing of large amount of documents
+		  \end{itemize}
+
+	\item Relational databases are efficient if they are \textbf{optimized for frequent but small transactions} or for \textbf{large batch transactions with rare write accesses}.
+	\item Relational databases are unable to handle \textbf{high data requirements} and \textbf{frequent data changes} at the same time.
+
+	\item NoSQL databases can handle many \textbf{write} and \textbf{read} requests (e.g.\ Facebook, Amazon).
+	\end{itemize}
+\end{itemize}
+
+
+\pagebreak
+\section{Architecture of Distributed Information Systems} % (fold)
+\label{sec:architecture_of_distributed_information_systems}
+
+
+
+% section architecture_of_distributed_information_systems (end)
+
+% subsection alternatives_for_persistent_and_bulk_data_management (end)
+
+% subsection query_languages (end)
 % subsection persistent_entities (end)
 
 
