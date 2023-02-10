@@ -1597,10 +1597,63 @@ are mutually dependent.
 	  \item \textbf{distributed system apppears as a single computer system} -> structure hidden from programmer
 	\item \textbf{Forms of transparency}
 		\begin{itemize}
-		  \item 
+			\item \textbf{Access transparency:} local and remote objects are treated equally
+				\item \textbf{Location transparency:} objects can be accessed without knowing their location
+					\item \textbf{Concurrency transparency:} multiple processes can interact concurrently with shared objects without interference
+					\item \textbf{Replication transparency:} transparent use of multiple instances of an object
+					\item \textbf{Migration transparency:} location change of an object is transparent
 		\end{itemize}
 	\end{itemize}
+
+\item \textbf{Misconceptions About Distributed Systems:}
+	\begin{itemize}
+	  \item network is reliable, secure, homogeneous
+	\item latency\footnote{\textbf{Network latency} is the delay in network communication. It shows the time that data takes to transfer across the network.} and transport  cost is zero
+	\end{itemize}
+
+\item \textbf{Distributed Systems vs.\ Centralized Information Systems:}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=1.0\linewidth]{centdecent.png}
+	  \label{fig:centdecent_png}
+	\end{figure}
 \end{itemize}
+
+\subsection{Synchronous and Asynchronous Communication} % (fold)
+\label{sub:synchronous_and_asynchronous_communication}
+
+\begin{itemize}
+  \item \textbf{Communication in Distributed Systems:}
+	  \begin{itemize}
+	    \item It is a \textbf{fundamental architectural decision} whether the communication of distributed components is implemented \textbf{synchronously} or \textbf{asynchronously} since it leads to \textbf{different forms of process coupling}
+	\item \textbf{Asynchronous communication:} sender process does not wait for receiver process
+	\item \textbf{Synchronous communication:} sender waits for receiver process to accept/perform a request
+	  \end{itemize}
+
+\item \textbf{Synchronous Communication via Remote Procedure Calls:}\\ \\
+	\textbf{Remote Procedure Call (RPC)}
+	\begin{itemize}
+	  \item clients call \textbf{remote methods}
+	\item \textbf{Marshalling:} transformation of structured argument values or results into linear messages (memory representation -> data format suitable for storage or transmisson)
+	\item \textbf{Unmarshalling:} transformation of linear messages into structured argument values or results
+		\item \textbf{Proxy} and \textbf{skeleton} are provided by a middleware and encode and decode the messages
+	\end{itemize}
+
+\item \textbf{General Challenge of Distributed Systems:}
+	\begin{itemize}
+	  \item client and server can crash independently
+	\item messages can be lost
+	\item difficulty to reach a consensus on the distributed world
+	\item \textit{\underline{Example:}} client does not receive answer to a \textbf{synchronous} request in a remote procedure call -> request times out, but what happened (\textbf{A}, \textbf{B} or \textbf{C})?
+		\begin{figure}[h!]
+		  \centering
+		  \includegraphics[width=0.8\linewidth]{challengedist.png}
+		  \label{fig:challengedist_png}
+		\end{figure}
+	\end{itemize}
+\end{itemize}
+
+% subsection synchronous_and_asynchronous_communication (end)
 
 % subsection characteristics_of_distributed_systems (end)
 
