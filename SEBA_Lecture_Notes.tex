@@ -940,7 +940,7 @@ are mutually dependent.
 		  \underline{Special cases of \textbf{\textit{@Component}}:}
 	\item \textbf{\textit{@Controller}}: for classes at presentation layer
 	\item \textbf{\textit{@Service}}: for classes at service layer
-\item \textbf{\textit{@Repository}}: for classes at persistance layer\\ \\
+\item \textbf{\textit{@Repository}}: for classes at persistence layer\\ \\
 	\underline{Other Annotations:}
 
 \item \textbf{\textit{@SpringBootApplication}}: for Spring Boot apps
@@ -970,6 +970,246 @@ are mutually dependent.
 	\end{figure}
 \end{itemize}
 
+\pagebreak
+\section{Persistent Data Management} % (fold)
+\label{sec:persistent_data_management}
+ 
+\subsection{Motivation} % (fold)
+\label{sub:motivation}
+
+
+
+% subsection motivation (end)
+\begin{itemize}
+\item \textbf{Management of Persistent Data in Business Applications:}
+		  
+	  \begin{itemize}
+	    \item \textbf{Persistent Data:} data that is infrequently accessed, not likely to be modified and stored beyond the lifetime of the user session (non-volatile) (e.g.\ master data, transactional data, historical data)
+	  \end{itemize}
+
+  \item \textbf{Impedance Mismatch:} a set of conceptual and technical difficulties that are often encountered because objects or class definitions must be mapped to database tables defined by a relational schema -> RDBMS\footnote{relational database management system} with object-oriented programming
+	\begin{enumerate}
+	  \item specialized data structures for specific access patterns
+	\item relational data storage for storage of bulk data
+	\end{enumerate}
+
+\item \textbf{Databse Management Systems (DBMS):} entirety of programs for accessing database, checking consistency and modifying the data is called a database management system
+
+	\begin{itemize}
+	  \item \textbf{Persistence related functionalities:}
+		  \begin{itemize}
+		    \item persistent data retention
+		\item modification of stored data
+		\item parallel data modifications
+			\item handling of mass data
+				\item ensuring compliance with integrity conditions
+					\item recovery in case of error
+		  \end{itemize}
+
+	\item \textbf{Variants:}
+		\begin{itemize}
+		  \item \textbf{Relational Database}
+		\item \textbf{NoSQL Database}
+		\end{itemize}
+	\end{itemize}
+
+\item \textbf{Transactions (ACID)}:
+	\begin{itemize}
+	  \item a \textbf{transaction} is a single unit of work, often made up of multiple operations
+	\item transactions adhere to the \textbf{ACID} paradigm
+	\item \textbf{ACID:}
+		\begin{itemize}
+		  \item \textbf{Atomicity:} entire transaction takes place at once or does not happen at all
+		\item \textbf{Consistency:} database must be consistent before and after the transaction
+
+		\item \textbf{Isolation:} multiple transactions occur independently without interference
+		\item \textbf{Durability:} changes of a successful transaction occurs even if the system fails
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+
+\subsection{Programmatic Access to Relational Databases} % (fold)
+\label{sub:programmatic_access_to_relational_databases}
+
+\begin{itemize}
+  \item \textbf{Basics of Relational Databases:}
+	  \begin{itemize}
+	    \item a \textbf{relational database} is a set of named tables
+	\item number of rows -> cardinality of relation, number of columns -> arity of relation
+	\item every relation has a \textbf{primary key} which can be a single attribute or can consist of several attributes
+\item primary key of a table in another table -> \textbf{foreign key}
+	  \end{itemize}
+
+\item \textbf{H2 Database:} a relational database written in Java
+	\begin{itemize}
+	  \item \textbf{Main Features:}
+		  \begin{itemize}
+			  \item very fast, open-source, JDBC\footnote{java database connectivity} API
+		\item embedded mode and server mode
+			\item in-memory database -> volatile, wiped out after the execution of app
+		\item browser-based console app (supports SQL)
+		  \end{itemize}
+	\end{itemize}
+\item \textbf{Access to Persistent Relational Databases:}
+	\begin{itemize}
+	  \item \textbf{Goal:} business logic source code accesses persistently stored data
+	\item \textbf{Common Scenario:}
+		\begin{itemize}
+		  \item business logic developed in object-oriented programming language
+		\item relational database is used as persistent data storage
+
+		\end{itemize}
+		\item \textbf{Requirements:}
+			\begin{itemize}
+			  \item ACID for transactions
+			\item business logic independent of data access
+			\end{itemize}
+
+		\item \textbf{Different Implementation Strategies:}
+			\begin{itemize}
+			  \item \textbf{Direct SQL calls:} using an applicable technology from the programming language
+			\item \textbf{Software for Object-Relational Mapping:} automates aspects of access to the persistent data store
+			\end{itemize}
+	\end{itemize}
+
+	\pagebreak
+\item \textbf{Java Database Connectivity (JDBC): Overview}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.4\linewidth]{jdbcoverview.png}
+	  \label{fig:jdbcoverview_png}
+	\end{figure}
+
+\item \textbf{Advantages and Disadvantages of JDBC:} 
+				\begin{itemize}
+				  \item \textbf{Advantages:} direct use of JDBC in applications is appropriate, if
+					  \begin{itemize}
+					    \item stored procedures should be called
+						    \item special queries have to be executed
+							   \item proprietary database functionality is to be accessed
+					  \end{itemize}
+
+			\item \textbf{Disadvantages:}
+				\begin{itemize}
+				  \item during development often error-prune, handling is too complex for developers
+				\item requires commitment to a certain persistence strategy
+				\end{itemize}
+
+			\item \textbf{JDBC calls should never be integrated directly into business logic code!}
+				\end{itemize}
+
+
+\item \textbf{Jakarta Persistance API (JPA):} Jakarta Persistence defines a standard API for persistent management of relational data in Java environments.
+	\begin{itemize}
+	  \item \textbf{Main Features:}
+		  \begin{itemize}
+		    \item Object-Relational Mapping (ORM)
+		\item management of database access
+	\item JPA itself is only a specification -> part of Jakarta EE
+		  \end{itemize}
+	\end{itemize}
+
+\item \textbf{Hibernate (Framework):}
+	\begin{itemize}
+	  \item \textbf{Main Features:}
+		  \begin{itemize}
+		    \item \textbf{Object-Relational Mapping framework} for Java and RDBMS
+		\item open-source
+		\item full support for JPA
+		\item provides an SQL-like query language: \textbf{Hibernate Query Language}
+		\item serves as \textbf{abstraction above JDBC}
+		\item \textbf{easy to integrate} into projects
+		  \end{itemize}
+	\end{itemize}
+\pagebreak
+\item \textbf{Object-Relational Mapping (ORM):} maps the state of objects to data in relational database to provide transparent persistent data storage and access
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.5\linewidth]{orm.png}
+	  \label{fig:orm_png}
+	\end{figure}
+
+\item \textbf{Software for Object-Relational Mapping:}
+	\begin{itemize}
+\item more complex structured transparently decomposed into flat structures of the RDBMS
+\item developer sees only structures of object-oriented programming language -> transparent conversion from object-oriented operations to relational operations
+	\item features already provided by RDBMS do not need to be realized by the object-oriented application again -> ensuring data integrity
+	\end{itemize}
+
+\item \textbf{Object Serialization and Deserialization:}
+	\begin{itemize}
+	  \item \textbf{Serialization} describes process of converting an object and all its iteratively reachable objects into a \textbf{byte or character stream} such that the object can be reconstructed through \textbf{deseerialization}.
+	\item stream contains representations of attribute values, types, associations (links) between objects
+	  \item can be used to store or send complex data structures
+	\item not all data types can be serialized (e.g.\ threads, files) -> exception thrown
+\item in Java through the interface \textit{\textbf{Serializable}}
+	
+	\end{itemize}
+\end{itemize}
+
+\subsection{Persistent Entities} % (fold)
+\label{sub:persistent_entities}
+\begin{itemize}
+  \item \textbf{Basics of Persistent Entities:}
+	  \begin{itemize}
+	    \item Persistent Entities provide object-oriented access to the persistent info in the database (e.g.\ customer class/table).
+    \item An \textbf{entity} is a persistent domain object annotated with \textit{\textbf{@Entity}}:
+	    \begin{itemize}
+	      \item Entity classes are mapped to tables in relational database.
+		  \item Each row represents an instance of that class.
+	    \end{itemize}
+
+    \item multiple clients can use entity instances that represent the same data
+	 \item each entity instance has a \textbf{unique primary key}
+	\item entities exit as long as database exists (secure against server failures) or until they are deleted
+	  \end{itemize}
+
+\item \textbf{Developer View of a Persistent Entity:} developer requires methods of two different types:
+	\begin{enumerate}
+	  \item methods to \textbf{create}, \textbf{read}, \textbf{update} and \textbf{delete} (CRUD) \underline{instances of} \underline{entities}:
+		  \begin{itemize}
+		    \item \textbf{EntityManager} in Jakarta
+		\item \textbf{Hibernate} provides its own EntityManager called Session
+		  \end{itemize}
+
+\item methods to \textbf{read} and \textbf{update} \underline{attribute values} of an entity instance
+	\end{enumerate}
+
+\item \textbf{EntityManager:}
+	\begin{itemize}
+	  \item allows access to the data store by implementing programming interfaces and lifecycle rules defined by JPA
+	\item associated with a persistence context, within which entity instances and their lifecycles are managed
+	\end{itemize}
+\end{itemize}
+
+
+% subsection persistent_entities (end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% subsection programmatic_access_to_relational_databases (end)
+% section persistent_data_management (end)
 % subsection java_annotations (end)
 % subsection libraries_an (end)
 % subsection architecture_of_business_information_systems (end)

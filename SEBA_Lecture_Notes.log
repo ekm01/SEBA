@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  9 FEB 2023 19:42
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  10 FEB 2023 14:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -255,14 +255,25 @@ File: reflection.png Graphic file (type bmp)
 <reflection.png>
 File: reqrepcycle.png Graphic file (type bmp)
 <reqrepcycle.png>
- [23] (./SEBA_Lecture_Notes.aux) ) 
+ [23] [24] [25]
+File: jdbcoverview.png Graphic file (type bmp)
+<jdbcoverview.png>
+
+Overfull \hbox (5.83661pt too wide) in paragraph at lines 1117--1118
+[]\TU/lmr/bx/n/10 Object-Relational Mapping framework \TU/lmr/m/n/10 for Java and RDBMS 
+ []
+
+[26]
+File: orm.png Graphic file (type bmp)
+<orm.png>
+ [27] [28] (./SEBA_Lecture_Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2347 strings out of 476156
- 36380 string characters out of 5814963
+ 2369 strings out of 476156
+ 36791 string characters out of 5814963
  336351 words of memory out of 5000000
- 23100 multiletter control sequences out of 15000+600000
+ 23120 multiletter control sequences out of 15000+600000
  475707 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  55i,8n,62p,360b,400s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SEBA_Lecture_Notes.xdv (23 pages, 319444 bytes).
+Output written on SEBA_Lecture_Notes.xdv (28 pages, 382608 bytes).
