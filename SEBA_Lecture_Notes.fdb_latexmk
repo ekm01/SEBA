@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1676051250 "SEBA_Lecture_Notes.xdv" "SEBA_Lecture_Notes.pdf" "SEBA_Lecture_Notes" 1676051251
-  "SEBA_Lecture_Notes.xdv" 1676051250 446592 3d983d00520de18e2326352f7eb2477b "xelatex"
+["xdvipdfmx"] 1676059909 "SEBA_Lecture_Notes.xdv" "SEBA_Lecture_Notes.pdf" "SEBA_Lecture_Notes" 1676059911
+  "SEBA_Lecture_Notes.xdv" 1676059909 472780 6206768c92f60a626ffa3bac8becea30 "xelatex"
   (generated)
   "SEBA_Lecture_Notes.pdf"
-["xelatex"] 1676051249 "SEBA_Lecture_Notes.tex" "SEBA_Lecture_Notes.xdv" "SEBA_Lecture_Notes" 1676051251
+["xelatex"] 1676059909 "SEBA_Lecture_Notes.tex" "SEBA_Lecture_Notes.xdv" "SEBA_Lecture_Notes" 1676059911
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1650183167 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1650183167 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -44,8 +44,8 @@
   "/usr/share/texmf-dist/tex/latex/l3backend/l3backend-xetex.def" 1650183167 35763 558b6bb076dfa9b058fe5c58dc6e0434 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1675110641 5825180 8d6a65e830cc74b1ae523389d2670d2d ""
-  "SEBA_Lecture_Notes.aux" 1676051250 5445 5c0f072bd35aac6ddacb0536ea596b9d "xelatex"
-  "SEBA_Lecture_Notes.tex" 1676051246 66793 e19b3e3cf4187b3f0fa306c912ec4001 ""
+  "SEBA_Lecture_Notes.aux" 1676059909 5445 134327500ed8b229be065e44ba77ebf9 "xelatex"
+  "SEBA_Lecture_Notes.tex" 1676059907 70540 e85a7b9949cba03eb667e5ce9ac02fd8 ""
   "adaptationsbs.png" 1675778299 48371 da17b87edd07ed69e81a8ee80b53c959 ""
   "addisframe.png" 1675958489 61175 e79ead901c508f2742022e908f945723 ""
   "addisjpql.png" 1676048031 30116 3b2877e982b07e2d52406d4d0c3a1e8f ""

@@ -1503,13 +1503,111 @@ are mutually dependent.
 \subsection{Characteristics of Distributed Systems} % (fold)
 \label{sub:characteristics_of_distributed_systems}
 
+\begin{itemize}
+  \item \textbf{Foundations:}
+	  \begin{itemize}
 
+	\item \textbf{Distributed system:} a system that is comprised of several physically disjoint compute resources interconnected by a network
+	    \item \textbf{Distributed Application:} an application consisting of severeal processes that run distributed in several process spaces
+\item \textbf{Characteristics of a distributed system:}
+	\begin{itemize}
+	  \item resource sharing
+	\item openness (communication protocols and interfaces)
+	\item concurrency
+		\item scalability
+			\item failure tolerance
+				\item distribution transparency
+	\end{itemize}
+	  \end{itemize}
+\item \textbf{A Centralized Information System Architecture:}
+\begin{itemize}
+  \item \textit{\underline{Example:}} Central mainframe
+	  \begin{itemize}
+	    \item multi-user operation
+	\item optimized for large amounts of data
+		\item high reliability
+		\item minimal logic on the terminal, only display of data
+	  \end{itemize}
+\end{itemize}
+\item \textbf{A Local Area Network of Distributed Clients and Servers:}
+	\begin{itemize}
+	  \item distributed system within a company, department
+		  \begin{itemize}
+		    \item multi-user operation
+		\item distributed services and information
+		  \end{itemize}
+
+	\item different functionalities supported by different servers
+		\item automation of business processes
+		\item requirement of integration effort and leads to \textbf{productivity paradox}:
+			\begin{itemize}
+			  \item more IT investments do not lead to higher productivity
+				  \item limited realization of compound effects
+			\end{itemize}
+	\end{itemize}
+
+\item \textbf{Resource Sharing:}
+	\begin{itemize}
+	  \item \textbf{client-server model} -> based on service-oriented achitecture for resource sharing
+	\item \textbf{server} processes provide \textbf{resource managers}, they provide shared resources (e.g.\ data, code, hardware, processes)
+\item \textbf{client} processes issue requests to use these remote resources
+\item client initiates the communication
+	\end{itemize}
+
+\item \textbf{Opennes and Concurrency:}
+	\begin{itemize}
+	  \item \textbf{Openness}
+		  \begin{itemize}
+		    \item extensibility of the system at the
+			   \begin{itemize}
+			     \item \textbf{hardware level:} new peripherals, memory, etc.
+			\item \textbf{software level:} new resource services, communication protocols
+			   \end{itemize}
+		\item specifications for \textbf{interfaces} of the system are disclosed and documented
+		  \end{itemize}
+
+\item \textbf{Concurrency:}
+	\begin{itemize}
+	  \item multiple users issue independent and concurrent requests via client processes
+\item server processes run concurrently
+	\item multiple processes may exist for each resource type to improve scalability
+	\end{itemize}
+
+	\end{itemize}
+\item \textbf{Scalability and Failure Tolerance:}
+	\begin{itemize}
+	  \item \textbf{Scalability}
+		  \begin{itemize}
+		    \item adapting the system for larger data volumes, workloads, faster throughput
+		\item increase in complexity
+		\item ideally without changing application architecture
+		\item \textbf{Goal:} constant performance with increasing load
+		  \end{itemize}
+
+\item \textbf{Failure tolerance}
+	\begin{itemize}
+	  \item ability of distributed system to provide functionalities even if a number of defective subsystems (servers/clients) exist
+\item implementation via redundant subsystems, a certain number of which can be defective
+\item guarantee of high availability
+	\end{itemize}
+	\end{itemize}
+
+\item \textbf{Transparency:}
+	\begin{itemize}
+	  \item \textbf{distributed system apppears as a single computer system} -> structure hidden from programmer
+	\item \textbf{Forms of transparency}
+		\begin{itemize}
+		  \item 
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
 
 % subsection characteristics_of_distributed_systems (end)
 
 % section architecture_of_distributed_information_systems (end)
 
 % subsection alternatives_for_persistent_and_bulk_data_management (end)
+
 
 % subsection query_languages (end)
 % subsection persistent_entities (end)
