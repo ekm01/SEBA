@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  10 FEB 2023 23:03
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  11 FEB 2023 20:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -368,14 +368,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 1633--1635
 [37]
 File: challengedist.png Graphic file (type bmp)
 <challengedist.png>
- [38] (./SEBA_Lecture_Notes.aux) ) 
+ [38]
+Overfull \hbox (2.03667pt too wide) in paragraph at lines 1669--1670
+[]\TU/lmr/m/n/10 designed for \TU/lmr/bx/n/10 synchronous communication \TU/lmr/m/n/10 between \TU/lmr/bx/n/10 web browsers
+ []
+
+File: httpmethods.png Graphic file (type bmp)
+<httpmethods.png>
+File: httpmessages.png Graphic file (type bmp)
+<httpmessages.png>
+[39]
+File: httpstatuscodes.png Graphic file (type bmp)
+<httpstatuscodes.png>
+
+Overfull \hbox (1.21994pt too wide) in paragraph at lines 1726--1727
+[]\TU/lmr/bx/n/10 asynchronous \TU/lmr/m/n/10 distributed communication through the exchange
+ []
+
+[40]
+File: pointtopoint.png Graphic file (type bmp)
+<pointtopoint.png>
+File: publishsubscribe.png Graphic file (type bmp)
+<publishsubscribe.png>
+ [41]
+File: assyncaddis.png Graphic file (type bmp)
+<assyncaddis.png>
+File: sebabankapi.png Graphic file (type bmp)
+<sebabankapi.png>
+ [42]
+Overfull \hbox (2.11398pt too wide) in paragraph at lines 1824--1825
+[]\TU/lmr/bx/it/10 @PostMapping\TU/lmr/m/n/10 , \TU/lmr/bx/it/10 @PutMapping\TU/lmr/m/n/10 , \TU/lmr/bx/it/10 @DeleteMapping \TU/lmr/m/n/10 -> for \TU/lmr/bx/n/10 meth-
+ []
+
+
+Overfull \hbox (11.2433pt too wide) in paragraph at lines 1831--1832
+\TU/lmr/m/n/10 out-of-the-box (e.g. \TU/lmr/bx/it/10 TypeMismatchException\TU/lmr/m/n/10 ) => \TU/lmr/bx/n/10 Exception Han-
+ []
+
+
+Overfull \hbox (0.36949pt too wide) in paragraph at lines 1836--1836
+[]\TU/lmr/bx/n/14.4 Security of REST-based Business Applications 
+ []
+
+[43] (./SEBA_Lecture_Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2491 strings out of 476156
- 39528 string characters out of 5814963
+ 2557 strings out of 476156
+ 40971 string characters out of 5814963
  336351 words of memory out of 5000000
- 23229 multiletter control sequences out of 15000+600000
+ 23288 multiletter control sequences out of 15000+600000
  475707 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,8n,62p,360b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,8n,62p,384b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SEBA_Lecture_Notes.xdv (38 pages, 493196 bytes).
+Output written on SEBA_Lecture_Notes.xdv (43 pages, 557716 bytes).

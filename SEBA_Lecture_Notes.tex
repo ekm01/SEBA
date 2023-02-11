@@ -1651,8 +1651,202 @@ are mutually dependent.
 		  \label{fig:challengedist_png}
 		\end{figure}
 	\end{itemize}
+
+\item \textbf{Alternatives for Handling Time-Outs in a RPC:}
+	\begin{itemize}
+		\item The programmer has to decide how to deal with a \textbf{time-out} based on the \textbf{semantics} of the executed operation and the specific \textbf{business context}.
+	
+	\item \textbf{Maybe semantics:} The server procedure is executed \textbf{once} or \textbf{not at all}. In case of an error, the client cannot know whether the procedure. -> in case of time-out, client \textbf{does not repeat} its request
+\item \textbf{At-least-once semantics:} The server procedure is executed \textbf{at least once}. -> in case of time-out, client \textbf{repeats} its request
+\item \textbf{At-most-once semantics:} The server procedure is executed \textbf{at most once}. -> in case of time-out, client \textbf{repeats} its request and \textbf{marks} it as a repeat 
+\item It is practically impossible to achieve the semantics of a \textbf{local} procedure call:
+\item \textbf{Exactly-once:} The procedure is executed \textbf{exactly once}.
+	\end{itemize}
+
+\pagebreak
+\item \textbf{Hypertext Transfer Protocol (HTTP):} is an application-layer protocol for transmitting hypermedia documents, such as HTML 
+	\begin{itemize}
+\item designed for \textbf{synchronous communication} between \textbf{web browsers} and \textbf{web servers}
+\item follows \textbf{client-server model}, with client opening a \textbf{connection}
+\item \textbf{stateless} => every HTTP request is independent and server does not keep any record of previous client requests
+	\end{itemize}
+
+\item \textbf{Client-Server Communication with HTTP:}
+	\begin{itemize}
+	  \item client sends \textbf{request} to server
+	\item server receives request, carries out the operation defined in request and sends a \textbf{response} to client
+	\item to represent \textbf{structured data} in the request and response as hypertext, XML or JSON are used
+	\end{itemize}
+
+\item \textbf{Create, Read, Update, Delete (CRUD), HTTP Request Methods:} HTTP defines a fixed set of \textbf{request methods} to indicate the desired action for a given resource.
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.5\linewidth]{httpmethods.png}
+	  \label{fig:httpmethods_png}
+	\end{figure}
+
+\item \textbf{HTTP Messages-Request and Responses:}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.4\linewidth]{httpmessages.png}
+	  \label{fig:httpmessages_png}
+	\end{figure}
+
+\pagebreak
+
+\item \textbf{HTTP Status Code:}
+	\begin{itemize}
+	  \item \textbf{status code} is explained with a \textbf{textual phrase} that is sent along as part of the status line
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.3\linewidth]{httpstatuscodes.png}
+  \label{fig:httpstatuscodes_png}
+\end{figure}	
+	\end{itemize}
+
+\item \textbf{Web API:} provides services to be consumed by application code
+	\begin{itemize}
+		\item  consists of a defined set of HTTP request messages
+		\item for each request, web API specifies the structure of response
+		\item response is typically expressed in JSON or XML
+	\end{itemize}
+
+\item \textbf{Developer Support for Testing Web APIs:}
+	\begin{itemize}
+	  \item HTTP requests are normally sent from application code (e.g.\ Java). For debugging and development, following tools can be used:
+		  \begin{itemize}
+		    \item \textbf{Postman} is a collabration platform for API development. It has an API Client to send REST requests directly within the app.
+		  \end{itemize}
+	\end{itemize}
+
+\item \textbf{Messaging and Message-Oriented-Middleware:}
+	\begin{itemize}
+	  \item \textbf{Message-Oriented Communication}
+		  \begin{itemize}
+		    \item \textbf{asynchronous} distributed communication through the exchange of \textbf{transient or persistent messages} between software components
+		\item introduction of a queue as an "intermediate component" between sender and receiver allows an \textbf{indirect} communication
+\item \textit{\underline{Example:}} E-Mail Services (unstructured messages)
+		  \end{itemize}
+
+\item \textbf{Message-Oriented Middleware}
+	\begin{itemize}
+		\item provides generic services for \textbf{reliable} message-oriented communication through persistent and transient queues
+		\item allows to implement \textbf{reliable} message delivery (exactly once semantics), but also lower levels of reliability
+
+		\item \textit{\underline{Examples:}} JBoss Messaging
+	\end{itemize}
+	\end{itemize}
+
+
+\pagebreak
+
+\item \textbf{Messaging Models:}
+	\begin{itemize}
+	  \item \textbf{Point-to-Point Communication}
+		  \begin{itemize}
+			  \item \textbf{producer} (sender: creates message/request) and \textbf{consumer} (receiver)
+		\item producer knows the destination of message and places it in the queue
+		\item asynchronous communication between producer and consumer
+		\item each message received by the consumer is confirmed by him
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{pointtopoint.png}
+  \label{fig:pointtopoint_png}
+\end{figure}
+		  \end{itemize}
+
+\item \textbf{Publish-Subscribe}
+	\begin{itemize}
+	  \item \textbf{publisher} (sender) and \textbf{subscriber} (receiver) are not known to each other
+\item subscriber subscribes to receive messages on a \textbf{topic}
+	\item publisher knows the destination of message and places it into a topic
+\item multiple subscriber receive identical messages
+\item asynchronous messaging
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{publishsubscribe.png}
+  \label{fig:publishsubscribe_png}
+\end{figure}
+	\end{itemize}
+	\end{itemize}
+\item \textbf{Indirect Asynchronous Messaging:}
+	\begin{itemize}
+	  \item \textbf{Advantages of indirect asynchronous messaging}
+		  \begin{itemize}
+		    \item setup of sender and receiver component \textbf{independent} of each other -> allows easy exchange of components
+		\item sender need \textbf{no info} about receiver, vice versa
+		\item sending and subsequent processing by sender
+		  \end{itemize}
+		 This leads to a \textbf{loose coupling} of software components.
+	\end{itemize}
+\pagebreak
+
+\item \textbf{Asynchronous vs.\ Synchronous Communication:}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=1.0\linewidth]{assyncaddis.png}
+	  \label{fig:assyncaddis_png}
+	\end{figure}
 \end{itemize}
 
+
+\subsection{Implementing REST API} % (fold)
+\label{sub:implementing_rEST_aPI}
+\begin{itemize}
+  \item \textbf{Representational State Transfer (REST):} a software architectural style for distributed hypermedia systems like the world wide web
+	  \begin{itemize}
+	    \item provides a set of \textbf{architectural constraints} that, when applied as a whole, emphasizes:
+		    \begin{itemize}
+		      \item scalability of component interactions
+			\item generality of interfaces
+		\item independent deployment of components
+			\item intermediary components to reduce interaction latency, enforce security and encapsulate legacy systems
+		    \end{itemize}
+	  \end{itemize}
+\item \textbf{An Extract API for the SEBA Banking App:}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=1.0\linewidth]{sebabankapi.png}
+	  \label{fig:sebabankapi_png}
+	\end{figure}
+
+\pagebreak
+\item \textbf{Spring RESTful Service Controllers:}
+	\begin{itemize}
+	  \item \textbf{RESTful controllers} populate and return domain objects serialized as JSON via HTTP whereas Spring MVC controllers return views.
+	\end{itemize}
+
+\item \textbf{Annotations and Types for REST API:}
+	\begin{itemize}
+	  \item \textit{\textbf{@RestController}} indicates that the data returned by each method will be written straight into the response body -> for \textbf{classes} 
+	\item \textit{\textbf{@RequestMapping}} maps HTTP requests to handler methods of REST controllers. -> for \textbf{classes}
+\item \textit{\textbf{@GetMapping}} maps GET request onto specific methods of the controller class -> for \textbf{methods}
+\item \textit{\textbf{@PostMapping}}, \textit{\textbf{@PutMapping}}, \textit{\textbf{@DeleteMapping}} -> for \textbf{methods}
+\item \textit{\textbf{ResponseEntity<?>}} represents an HTTP response -> for \textbf{return values of methods}
+\item \textit{\textbf{@PathVariable}} indicates that a method parameter should be bound to a URI template variable\footnote{A \textbf{URI path template} has one or more variables, with each variable name surrounded by curly braces.}
+\item \textit{\textbf{@RequestBody}} is used to access HTTP request body, body content is converted to the method argument ((un)marshalling of Java objects to/from JSON, XML) -> for \textbf{parameters of methods}
+\item \textit{\textbf{@Valid}} triggers the \textbf{validation} of the annotated method parameter and puts the result into \textbf{\textit{BindingResult}} => \textbf{Request Validation}, \underline{if incorrect request body, HTTP (error) status code as reponse} (e.g.\ Status 400: Bad Request) -> for \textbf{parameters of methods}
+
+\item \textit{\textbf{@ControllerAdvice}} allows developers to handle exceptions across the whole application -> for \textbf{classes}
+\item \textit{\textbf{ResponseEntityExceptionHandler}} handles common exceptions out-of-the-box (e.g.\ \textit{\textbf{TypeMismatchException}}) => \textbf{Exception Handling} -> for \textbf{extending classes}
+\item \textbf{\textit{@ExceptionHandler}} configures the advice to only respond if a \textbf{\textit{EntityNotFoundException}} is thrown -> for \textbf{methods}
+	\end{itemize}
+\end{itemize}
+
+\section{Security of REST-based Business Applications} % (fold)
+\label{sec:security_of_rEST_based_business_applications}
+
+\subsection{Introduction and Fundamentals} % (fold)
+\label{sub:introduction_and_fundamentals}
+\begin{itemize}
+  \item \textbf{Security in Business Applications:}
+\end{itemize}
+
+
+% subsection introduction_and_fundamentals (end)
+
+% section security_of_rEST_based_business_applications (end)
+% subsection implementing_rEST_aPI (end)
 % subsection synchronous_and_asynchronous_communication (end)
 
 % subsection characteristics_of_distributed_systems (end)
@@ -1664,6 +1858,7 @@ are mutually dependent.
 
 % subsection query_languages (end)
 % subsection persistent_entities (end)
+
 
 
 
