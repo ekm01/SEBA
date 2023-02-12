@@ -1925,7 +1925,63 @@ are mutually dependent.
 
 \subsection{Important API Security Measures and Spring Security} % (fold)
 \label{sub:important_aPI_security_measures_and_spring_security}
+\begin{itemize}
+	\item \textbf{Managing Users and Access:}
+		\begin{itemize}
+		  \item management of users and their \textbf{access rights}
+		\item identification of user -> \textbf{Authentication}
+		\item management of users and their \textbf{credentials}, login/logout, register, importing users from existing sources
+		\item deactivate/delete account by user/admin
+		\item based on user identity, user have access to certain resources or functionality -> \textbf{Authorization}
+		\end{itemize}
 
+\item \textbf{Authentication:} \underline{how the identity} of who is trying to access a particular resource is \underline{verified}
+
+	\begin{itemize}
+		\item \textbf{Common authentication types:}
+	\begin{itemize}
+		\item username and password
+		\item certificate authentication
+		\item multi-factor authentication	
+	\end{itemize}
+
+	\item \textbf{Authentication input:} How are the credentials passed to the server?
+		\begin{itemize}
+		  \item form-based authentication -> in request body
+		\item basic authentication -> in request header
+		\end{itemize}
+
+\item \textbf{Storage mechanisms:}
+	\begin{itemize}
+	  \item in-memory authentication
+	\item JDBC authentication
+	\item LDAP\footnote{lightweight directory access protocol} storage
+	\end{itemize}
+	\end{itemize}
+
+\item \textbf{Dealing with Passwords:}
+\begin{itemize}
+  \item \textbf{never} storing passwords in \textbf{plain-text}
+\item using \textbf{hashing algorithms}
+\item \textbf{Spring Security} provides the \textit{\textbf{PasswordEncoder}} interface and multiple implementations
+\item \textbf{Encoding:} process of converting data from one form to another => reversible (decoding), for efficient transmission or storage
+\item \textbf{Encryption:} process of transforming data in order to keep it secret from others, only specific individuals can reverse the transformation (e.g.\ with a private key)
+	\item \textbf{Hashing:} process of generating a deterministic output from a given input => one-way, irreversible, for validation of integrity of data
+\end{itemize}
+
+\pagebreak
+\item \textbf{Basic Authentication:}
+	\begin{itemize}
+	  \item \textbf{Spring Security} uses \textbf{HTTP Basic Authentication}
+	\item basic auth only requires the client to send username and password through \textbf{HTTP Authorization header}
+	\item \textit{Base64}\footnote{\textbf{Base64} is used to encode binary data as printable text.} is only an encoding, not an ecryption or hashing method
+	\item \textbf{encrypted transit} with HTTPS
+	\item in value of header: \textit{Authorization: Basic <Base64 Encoding of Credentials>}
+	\item \textbf{limitation of basic auth:} user has to send credentials with each request
+	\end{itemize}
+
+\item \textbf{Authorization:}
+\end{itemize}
 
 
 % subsection important_aPI_security_measures_and_spring_security (end)

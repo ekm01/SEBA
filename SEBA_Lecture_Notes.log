@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  12 FEB 2023 16:07
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  12 FEB 2023 19:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -415,7 +415,12 @@ File: a1securityrisk.png Graphic file (type bmp)
 <a1securityrisk.png>
 File: a5securityrisk.png Graphic file (type bmp)
 <a5securityrisk.png>
- [45] [46] (./SEBA_Lecture_Notes.aux) ) 
+ [45]
+Overfull \hbox (3.87836pt too wide) in paragraph at lines 1948--1949
+[]\TU/lmr/bx/n/10 Authentication input: \TU/lmr/m/n/10 How are the credentials passed to the server? 
+ []
+
+[46] [47] (./SEBA_Lecture_Notes.aux) ) 
 Here is how much of TeX's memory you used:
  2577 strings out of 476156
  41470 string characters out of 5814963
@@ -425,4 +430,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  55i,8n,62p,384b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SEBA_Lecture_Notes.xdv (46 pages, 585680 bytes).
+Output written on SEBA_Lecture_Notes.xdv (47 pages, 606044 bytes).
