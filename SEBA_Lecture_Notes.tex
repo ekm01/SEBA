@@ -1840,8 +1840,97 @@ are mutually dependent.
 \label{sub:introduction_and_fundamentals}
 \begin{itemize}
   \item \textbf{Security in Business Applications:}
+	  \begin{itemize}
+	    \item data processed in business applications often contains \textbf{sensitive information}:
+		    \begin{itemize}
+		      \item personal data
+		\item confidential business information
+			\item classified information
+		    \end{itemize}
+		 \item Therefore, only \textbf{a specific user or trusted user} should be able to access this data. => data must be \textbf{protected} against attackers, otherwise \textbf{financial} and \textbf{reputational} damages
+	  \end{itemize}
+
+\item \textbf{Definitions and Delimitation:}
+	\begin{itemize}
+	  \item \textbf{Information Security:} processes and methodologies for preservation of confidentiality, integrity and availability of information -> not only about \textbf{technology}, but also \textbf{physical security} (protection against natural disasters), \textbf{human factor} (protection against social engineering)
+
+	\item \textbf{IT Security:} refers to \textbf{technical aspects of Information Security} -> not only \textbf{software}, but also \textbf{physical hardware} and \textbf{IT networks} 
+
+	\item \textbf{Security Engineering:} \textbf{Information Security + Software Engineering} => focusing on \textbf{secure implementation} of a web-based \textbf{API} with the help of \textbf{Spring Security} framework, building on top of \textbf{Spring Boot}
+	\end{itemize}
+
+\item \textbf{IT-Security Layers:} A key aspect in the engineering of secure software systems is to apply \textbf{security measures in multiple layers}.
+	\begin{itemize}
+	  \item to \textbf{properly secure} business app, \textbf{infrastructure, that business app is runing on,} must be secured
+
+	\item focusing on \textbf{securing application layer} (top layer) with the help of \textbf{Spring Security} framework
+	\end{itemize}
+
+\item \textbf{Core Information Security Properties (CIA):}
+	\begin{itemize}
+	  \item \textbf{Confidentiality:} Can \textbf{non-authorized} parties see data?
+	\item \textbf{Integrity:} Has data been \textbf{altered} (and should I know this)?
+	\item \textbf{Availability:} Is data \textbf{always accessible}?
+	\end{itemize}
+
+\item \textbf{Extension of CIA:}
+	\begin{itemize}
+	  \item \textbf{Non-repudiation:} impossibility to inappropriately deny a transaction or having sent a message
+	\item \textbf{Auditability:} ability to reconstruct earlier states of a system
+	\item \textbf{Usability:} ability to easily use and apply the security measures in place
+	\end{itemize}
+
+	\pagebreak
+\item \textbf{Core Information Security Principles:}
+	\begin{itemize}
+	  \item There is \textbf{no guarantee} in security:
+		  \begin{itemize}
+		    \item total security is unrealistic
+		\item \textbf{risk assessments} are important
+		\item analyzing impact and probability of occurrence
+		\item \textbf{Goal: balancing trade-off between risk, cost and usability}
+		  \end{itemize}
+
+	\item how to know if \textbf{enough security}? => difficult to measure, depends on risk appetite of the company
+	\end{itemize}
 \end{itemize}
 
+\subsection{Common Risks in Web-Based APIs} % (fold)
+\label{sub:common_risks_in_web_based_aPIs}
+
+\begin{itemize}
+  \item \textbf{Broken Object Level Authorization:}
+	  \begin{itemize}
+	    \item \textbf{lack of proper authorization checks} \underline{allows access} to a resource object that is \underline{not meant for current authenticated user} 
+	\item simply by replacing the identifier in the URL
+	  \end{itemize}
+	  \begin{figure}[h!]
+	    \centering
+	    \includegraphics[width=0.7\linewidth]{a1securityrisk.png}
+	    \label{fig:a1securityrisk_png}
+	  \end{figure}
+
+\item \textbf{Broken Function Level Authorization:}
+\begin{itemize}
+  \item some administration functions are \textbf{exposed as endpoints of the API}, but the \underline{user role is not checked on the server side}
+\item \underline{API relies on the client application} to use the proper endpoint of the respective role of the user
+\end{itemize}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.68\linewidth]{a5securityrisk.png}
+  \label{fig:a5securityrisk_png}
+\end{figure}
+\end{itemize}
+
+
+\subsection{Important API Security Measures and Spring Security} % (fold)
+\label{sub:important_aPI_security_measures_and_spring_security}
+
+
+
+% subsection important_aPI_security_measures_and_spring_security (end)
+
+% subsection common_risks_in_web_based_aPIs (end)
 
 % subsection introduction_and_fundamentals (end)
 
