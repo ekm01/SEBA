@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  13 FEB 2023 10:51
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Arch Linux) (preloaded format=xelatex 2023.1.30)  13 FEB 2023 12:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -117,7 +117,11 @@ File: l3backend-xetex.def 2022-04-14 L3 backend support: XeTeX
 LaTeX Warning: Unused global option(s):
     [ieeetran].
 
-(./SEBA_Lecture_Notes.aux)
+(./SEBA_Lecture_Notes.aux
+
+LaTeX Warning: Label `sub:motivation' multiply defined.
+
+)
 \openout1 = `SEBA_Lecture_Notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -430,14 +434,41 @@ Overfull \hbox (1.24829pt too wide) in paragraph at lines 2027--2028
 []\TU/lmr/bx/n/10 Authorization Server: \TU/lmr/m/n/10 server issuing access tokens to the client
  []
 
-[48] [49] [50] (./SEBA_Lecture_Notes.aux) ) 
+[48] [49] [50]
+File: processclass.png Graphic file (type bmp)
+<processclass.png>
+File: normativeprocess.png Graphic file (type bmp)
+<normativeprocess.png>
+ [51] [52]
+File: relationbpwf.png Graphic file (type bmp)
+<relationbpwf.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2235--2237
+
+ []
+
+[53]
+File: adaptiveprocess.png Graphic file (type bmp)
+<adaptiveprocess.png>
+File: persofprocess.png Graphic file (type bmp)
+<persofprocess.png>
+
+Overfull \hbox (103.50105pt too wide) in paragraph at lines 2265--2267
+ [][] 
+ []
+
+[54] (./SEBA_Lecture_Notes.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2577 strings out of 476156
- 41470 string characters out of 5814963
+ 2627 strings out of 476156
+ 42629 string characters out of 5814963
  336351 words of memory out of 5000000
- 23306 multiletter control sequences out of 15000+600000
+ 23351 multiletter control sequences out of 15000+600000
  475707 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  55i,8n,62p,387b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SEBA_Lecture_Notes.xdv (50 pages, 666520 bytes).
+Output written on SEBA_Lecture_Notes.xdv (54 pages, 706764 bytes).

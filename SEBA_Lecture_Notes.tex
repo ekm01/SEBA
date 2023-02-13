@@ -2100,7 +2100,181 @@ are mutually dependent.
 	\end{itemize}
 \end{itemize}
 
+\section{Workflow Management Systems} % (fold)
+\label{sec:workflow_management_systems}
 
+\subsection{Motivation} % (fold)
+\label{sub:motivation}
+
+\begin{itemize}
+  \item a \textbf{business process} has following characteristics:
+	  \begin{itemize}
+	    \item network of activities executed according to a \textbf{defined sequence}
+		    \item inputs transformed to outputs with the help of resources to meet customer requirements
+\item integrated into Enterprise Architecture of one or more organizations
+	\item \textit{\underline{Example:}} processing of loans at the bank, troubleshooting in software
+	  \end{itemize}
+\end{itemize}
+
+\subsection{Process Classification} % (fold)
+\label{sub:process_classification}
+\begin{itemize}
+  \item \textbf{Administrative Processes:}
+	  \begin{itemize}
+	    \item repetitive, predictable
+		 \item simple coordination rules
+	\item automated sequencing and coordination
+	  \end{itemize}
+\pagebreak
+
+\item \textbf{Production Processes:}
+\begin{itemize}
+  \item  implementation of business processes
+\item repetitive, predictable
+	\item complicated info processing
+	\item complex automation -> semantic knowledge required
+\end{itemize}
+\item \textbf{Collaborative Processes:}
+\begin{itemize}
+ \item execution takes place occasionally
+	\item problem solving
+\item software development
+
+\end{itemize}
+\item \textbf{Ad hoc Processes:}
+
+	\begin{itemize}
+	  \item sequence and coordination of the work steps are done \textbf{manually}
+		 \item sequence and coordination decisions are made \textbf{during execution}
+			 \item processes and/or tasks are all unique
+	\end{itemize}
+\end{itemize}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{processclass.png}
+  \label{fig:processclass_png}
+\end{figure}
+
+\subsection{Normative Processes} % (fold)
+\label{sub:normative_processes}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{normativeprocess.png}
+  \label{fig:normativeprocess_png}
+\end{figure}
+\begin{itemize}
+	\item \textbf{Definition:} \textbf{Normative processes} are usually characterized by infrequent changes and can be defined to the greatest possible extent before the process is executed. (e.g.\ loan processing at the bank, customer-specific assembly of a PC)
+	\item \textbf{Idea: Workflows}
+		\begin{itemize}
+			\item \textbf{business process and workflow:} how the execution of this process is run via a model
+			\item \textbf{Definition:} a set of activities, partly automated, controlled by a workflow management system (WFMS), which relate to parts of a business process or other organizational procedures 
+		  \item \textbf{Goal}
+			  \begin{itemize}
+			    \item automate processing of documents, information or tasks based on procedural rules
+			\item \textbf{explicit representation of processes} instead of implicit implementation of processes
+			  \end{itemize}
+			  \item \textbf{Approach}
+				  \begin{itemize}
+				    \item remote data base access
+					    \item remote procedure calls
+						\item message passing batch processing
+				  \end{itemize}
+
+				  \item \textbf{Advantages}
+					  \begin{itemize}
+					    \item easier changeability of process schemas, possible even without IT experts
+					\item higher transparency of the current process state
+					\item possibility of analsis, simulation, loose coupling among software systems
+					  \end{itemize}
+\item \textbf{Challenges}
+	\begin{itemize}
+	  \item business and technical domains misalignment
+	\item security
+	\item rapid development
+\item integration of heterogeneous systems
+\item different skills and background in workforce
+	\end{itemize}
+		\end{itemize}
+
+\item \textbf{More definitions:}
+	\begin{itemize}
+	  \item \textbf{instance:} describes a one-time concrete execution
+	\item \textbf{workflow chema:} represents a purposeful arrangement of concepts for describing,executing and controlling workflows at the character level
+	\item \textbf{workflow instance:} describes a concrete (singular) workflow
+	\item \textbf{workflow application:} an integrated application realized by one or more workflow schemas and associated software systems
+	\end{itemize}
+\pagebreak
+\item \textbf{Relationship Between Business Processes and Workflows:}
+	\begin{figure}[h!]
+	  \centering
+	  \includegraphics[width=0.7\linewidth]{relationbpwf.png}
+	  \label{fig:relationbpwf_png}
+	\end{figure}
+
+\item \textbf{Workflow Management System (WFMS):} a system that completely defines, manages and executes \textbf{workflows} through the execution of software (computer representation of the workflow logic)
+
+	\item \textbf{Core Features of WFMS:}
+		\begin{itemize}
+		  \item \textbf{Functionality Definition:}
+			  \begin{itemize}
+			    \item definition of workflows and associated activities
+\item mostly graphical definition -> translated into textual representation
+			  \end{itemize}
+			  \item \textbf{Runtime Features:}
+				  \begin{itemize}
+				    \item initiation, control and coordination of the execution of workflow instances
+				\item provided by workflow engine
+				  \end{itemize}
+				  \item \textbf{Interface:}
+					  \begin{itemize}
+					    \item user interface to the apps, which a concrete activity is realized
+					  \end{itemize}
+	  \end{itemize}
+
+\item \textbf{Workflow Engine:} a componant of a WFMS and provides runtime environment for the execution of workflow instances\\ \\
+	\textbf{Typical functions:}
+	\begin{itemize}
+	  \item interpretation of process definition
+\item control of process instances
+\item navigation between activities
+	\end{itemize}
+\end{itemize}
+
+\pagebreak
+\subsection{Adaptive Processes} % (fold)
+\label{sub:adaptive_processes}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{adaptiveprocess.png}
+  \label{fig:adaptiveprocess_png}
+\end{figure}
+
+\begin{itemize}
+  \item \textbf{Definition:} knowledge-intensive processes that have a very dynamic execution cannot be completely defined in advance and require \textbf{adaptation at runtime} -> execution of the processes depends on user decision at runtime (e.g.\ database administration tasks)
+\end{itemize}
+
+
+\subsection{Overview on the Process in Information Systems} % (fold)
+\label{sub:overview_on_the_process_in_information_systems}
+
+\begin{itemize}
+	\item \textbf{Perspectives of Processes in Information System:}
+		\begin{figure}[h!]
+  \centering
+  \includegraphics[width=1.3\linewidth]{persofprocess.png}
+  \label{fig:persofprocess_png}
+\end{figure}
+\end{itemize}
+
+
+% subsection overview_on_the_process_in_information_systems (end)
+% subsection adaptive_processes (end)
+% subsection normative_processes (end)
+% subsection process_classification (end)
+% subsection motivation (end)
+
+% section workflow_management_systems (end)
 % subsection important_aPI_security_measures_and_spring_security (end)
 
 % subsection common_risks_in_web_based_aPIs (end)
